@@ -87,11 +87,7 @@
 @layer components {
   /* Typography Classes */
   .hero-title {
-    @apply font-space text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight;
-    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 50%, hsl(var(--secondary)) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply font-space text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground;
   }
 
   .hero-subtitle {
@@ -144,10 +140,10 @@
 
   /* Glassmorphism Cards */
   .glass-card {
-    @apply relative overflow-hidden rounded-2xl border border-white/10;
-    background: linear-gradient(135deg, hsl(var(--card) / 0.8) 0%, hsl(var(--card) / 0.4) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    @apply relative overflow-hidden rounded-xl border border-white/5;
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .glass-card::before {
