@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,10 +44,6 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Made with love */}
-          <p className="footer-text flex items-center gap-2">
-            Made with <Heart className="w-4 h-4 text-red-400 fill-red-400" /> at NIT Jamshedpur
-          </p>
         </div>
       </div>
     </footer>

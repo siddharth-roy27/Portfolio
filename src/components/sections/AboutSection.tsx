@@ -93,8 +93,8 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="font-space font-semibold text-lg mb-1">Positions</h3>
-                  <p className="body-text">Vice President, SECE NIT Jamshedpur</p>
-                  <p className="caption-text">Head of Electronics & Avionics, Rocketry Club</p>
+                  <p className="body-text">Vice President, Team Phocus</p>
+                  <p className="caption-text">Official Photography & Filmmaking Club, NIT Jamshedpur</p>
                 </div>
               </div>
             </div>

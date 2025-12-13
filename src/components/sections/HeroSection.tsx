@@ -43,25 +43,14 @@ const HeroSection = () => {
             Siddharth Roy
           </motion.h1>
 
-          {/* Subtitle with domain-specific content */}
+          {/* Tagline */}
           <motion.p
-            key={domain}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="hero-subtitle mb-8 md:mb-12 max-w-2xl mx-auto"
+            className="font-mono text-base md:text-lg text-muted-foreground mb-8 md:mb-12 max-w-2xl mx-auto tracking-wide"
           >
-            {domain === 'software' ? (
-              <>
-                Building <span className="text-primary text-glow">high-performance systems</span> & 
-                <span className="text-secondary text-glow-mint"> AI-powered applications</span>
-              </>
-            ) : (
-              <>
-                Crafting <span className="text-secondary text-glow-mint">embedded systems</span> & 
-                <span className="text-primary text-glow"> autonomous robotics</span>
-              </>
-            )}
+            Built for exploration. Engineered to give negative feedback ;)
           </motion.p>
 
           {/* CTA Buttons */}
@@ -95,8 +84,8 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-4"
           >
             {[
-              { icon: Github, href: 'https://github.com/siddharthroy', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/siddharthroy', label: 'LinkedIn' },
+              { icon: Github, href: 'https://github.com/siddharthroy2708', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://linkedin.com/in/siddharthroy2708', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:siddharthroy2708@gmail.com', label: 'Email' },
               { icon: FileText, href: '#resume', label: 'Resume' },
             ].map(({ icon: Icon, href, label }) => (

@@ -95,10 +95,9 @@ const eceSkills: SkillCategory[] = [
 ];
 
 const codingPlatforms = [
-  { name: 'Codeforces', icon: '🔥', color: 'text-red-400' },
-  { name: 'CodeChef', icon: '👨‍🍳', color: 'text-amber-400' },
-  { name: 'HackerRank', icon: '💚', color: 'text-green-400' },
-  { name: 'LeetCode', icon: '🧩', color: 'text-yellow-400' },
+  { name: 'LeetCode', href: 'https://leetcode.com/u/siddharthroy2708/', color: 'text-amber-400' },
+  { name: 'Codeforces', href: 'https://codeforces.com/profile/siddharthroy2708', color: 'text-blue-400' },
+  { name: 'HackerRank', href: 'https://www.hackerrank.com/profile/siddharthroy2708', color: 'text-emerald-400' },
 ];
 
 const SkillsSection = () => {
@@ -190,19 +189,21 @@ const SkillsSection = () => {
             </h3>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               {codingPlatforms.map((platform, index) => (
-                <motion.div
+                <motion.a
                   key={platform.name}
+                  href={platform.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                   className="flex items-center gap-3 px-6 py-4 rounded-xl bg-muted/50 border border-white/5 cursor-pointer interactive-hover"
                 >
-                  <span className="text-2xl">{platform.icon}</span>
                   <span className={`font-mono font-medium ${platform.color}`}>
                     {platform.name}
                   </span>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </motion.div>
