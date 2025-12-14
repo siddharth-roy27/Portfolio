@@ -12,7 +12,7 @@
 
 **A modern, responsive portfolio website showcasing projects, skills, and competitive programming achievements**
 
-[🌐 Live Demo](https://siddharth-roy-portfolio.com) • [📖 Documentation](#-features) • [🛠️ Setup](#-getting-started)
+[🌐 Live Demo](https://portfolio-801.pages.dev/) • [📖 Documentation](#-features) • [🛠️ Setup](#-getting-started)
 
 </div>
 
@@ -139,6 +139,13 @@ Portfolio/
 
 ## 🚢 Deployment
 
+### Deploy to Cloudflare Pages
+
+The portfolio is currently deployed on Cloudflare Pages:
+- **Live URL**: [https://portfolio-801.pages.dev/](https://portfolio-801.pages.dev/)
+
+Cloudflare Pages automatically deploys from the `main` branch on every push.
+
 ### Deploy to Vercel (Recommended)
 
 ```bash
@@ -224,7 +231,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 **Siddharth Roy**
 
-- 🌐 Portfolio: [siddharth-roy-portfolio.com](https://siddharth-roy-portfolio.com)
+- 🌐 Portfolio: [portfolio-801.pages.dev](https://portfolio-801.pages.dev/)
 - 📧 Email: [Your Email]
 - 💼 LinkedIn: [Your LinkedIn]
 - 🐙 GitHub: [@siddharth-roy27](https://github.com/siddharth-roy27)
