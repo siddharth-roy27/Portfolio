@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Siddharth Roy Portfolio
+#  Siddharth Roy Portfolio
 
 ### Software Engineer & ECE Student | NIT Jamshedpur
 
@@ -50,7 +50,7 @@
 - **LeetCode GraphQL API** - Competitive programming stats
 - **Codeforces API** - Contest ratings and rankings
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -75,7 +75,7 @@ cp .env.example .env
 npm run dev
 ```
 
-Visit `http://localhost:8080` to see your portfolio! 🎉
+Visit `http://localhost:8080` to see your portfolio! 
 
 ### Environment Variables
 
@@ -102,7 +102,7 @@ VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run ESLint |
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Portfolio/
@@ -124,7 +124,7 @@ Portfolio/
 └── package.json            # Dependencies
 ```
 
-## 🎯 Key Sections
+##  Key Sections
 
 - **Hero** - Introduction with animated background
 - **About** - Personal background and education
@@ -137,7 +137,7 @@ Portfolio/
 - **Resume** - Downloadable resume PDFs
 - **Contact** - Get in touch form
 
-## 🚢 Deployment
+##  Deployment
 
 ### Deploy to Cloudflare Pages
 
@@ -182,9 +182,8 @@ The portfolio is configured to work with custom domains. Update the domain in:
 - `index.html` - Meta tags and SEO
 - Deployment platform settings
 
-**Note:** Domain names cannot contain underscores. Use hyphens instead:
-- ✅ `siddharth-roy-portfolio.com`
-- ❌ `siddharth_roy_portfolio.com`
+
+
 
 ### Supabase Edge Functions
 
@@ -232,8 +231,6 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 **Siddharth Roy**
 
 - 🌐 Portfolio: [portfolio-801.pages.dev](https://portfolio-801.pages.dev/)
-- 📧 Email: [Your Email]
-- 💼 LinkedIn: [Your LinkedIn]
 - 🐙 GitHub: [@siddharth-roy27](https://github.com/siddharth-roy27)
 
 ---
@@ -242,6 +239,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 **⭐ Star this repo if you find it helpful!**
 
-Made with ❤️ by [Siddharth Roy](https://github.com/siddharth-roy27)
 
 </div>
