@@ -1,0 +1,14 @@
+{
+    "animations.Install-Method": "Apc Customize UI++",
+    "workbench.iconTheme": "material-icon-theme",
+    "glassit.alpha": 230,
+    "workbench.colorTheme": "Cursor Dark High Contrast",
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 17,
+    "editor.fontFamily": "fira code",
+    "git.autofetch": true,
+    "apc.imports": [
+        "file://${userHome}/.cursor/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ],
+    "cursor.composer.shouldChimeAfterChatFinishes": true
+}

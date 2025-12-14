@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* NoteForge-AI Design System - Mac Glassmorphism */
+
+@layer base {
+  :root {
+    /* Deep dark base with blue undertones */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    /* Glass cards */
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Vibrant blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+
+    /* Secondary - Muted glass */
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted tones */
+    --muted: 222 47% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent - Amber/Gold for AI */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 6%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 222 30% 20%;
+    --input: 222 30% 16%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 85%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 47% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 16%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Custom colors for NoteForge */
+    --glass: 222 47% 12%;
+    --glass-border: 222 30% 22%;
+    --ai-glow: 38 92% 50%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Glass morphism utilities */
+@layer components {
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-glass-border/30;
+  }
+
+  .glass-hover {
+    @apply hover:bg-card/80 transition-all duration-300;
+  }
+
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-glass-border/40;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px -5px hsl(var(--accent) / 0.4);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  /* Animated background orbs */
+  .orb {
+    @apply absolute rounded-full blur-3xl opacity-20 animate-pulse;
+  }
+
+  /* Editor styles */
+  .tiptap-editor {
+    @apply max-w-none text-foreground;
+  }
+
+  .tiptap-editor p.is-editor-empty:first-child::before {
+    @apply text-muted-foreground pointer-events-none float-left h-0;
+    content: attr(data-placeholder);
+  }
+
+  .tiptap-editor:focus {
+    @apply outline-none;
+  }
+
+  .tiptap-editor h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  .tiptap-editor h2 {
+    @apply text-2xl font-semibold mb-3;
+  }
+
+  .tiptap-editor h3 {
+    @apply text-xl font-medium mb-2;
+  }
+
+  .tiptap-editor p {
+    @apply mb-3 leading-relaxed;
+  }
+
+  .tiptap-editor ul,
+  .tiptap-editor ol {
+    @apply pl-6 mb-3;
+  }
+
+  .tiptap-editor li {
+    @apply mb-1;
+  }
+
+  .tiptap-editor a {
+    @apply text-primary underline;
+  }
+
+  .tiptap-editor blockquote {
+    @apply border-l-4 border-primary/50 pl-4 italic text-muted-foreground;
+  }
+
+  .tiptap-editor code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .tiptap-editor pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto mb-3;
+  }
+
+  .tiptap-editor img {
+    @apply rounded-lg max-w-full;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  @keyframes float-slow {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    33% { transform: translate(-45%, -55%) scale(1.1); }
+    66% { transform: translate(-55%, -45%) scale(0.95); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+
+  @keyframes float-particle {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes typing {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 20s ease-in-out infinite;
+  }
+
+  .animate-float-particle {
+    animation: float-particle 20s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-typing {
+    animation: typing 1s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}

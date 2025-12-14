@@ -1,0 +1,6 @@
+2025/12/06-16:16:02.691 ca2 Creating DB /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb since it was missing.
+2025/12/06-16:16:02.695 ca2 Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/06-18:30:18.848 ca4 Level-0 table #5: started
+2025/12/06-18:30:18.849 ca4 Level-0 table #5: 7213 bytes OK
+2025/12/06-18:30:18.850 ca4 Delete type=0 #3
+2025/12/06-18:30:18.851 ca4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

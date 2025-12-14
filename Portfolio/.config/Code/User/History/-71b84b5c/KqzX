@@ -1,0 +1,23 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra
+BIN = bin
+TARGET = $(BIN)/reverse-proxy-step1
+SRC = src/main.cpp
+
+
+all: $(TARGET)
+
+
+$(BIN):
+mkdir -p $(BIN)
+
+
+$(TARGET): | $(BIN)
+$(CXX) $(CXXFLAGS) -pthread $(SRC) -o $(TARGET)
+
+
+clean:
+rm -rf $(BIN)
+
+
+.PHONY: all clean

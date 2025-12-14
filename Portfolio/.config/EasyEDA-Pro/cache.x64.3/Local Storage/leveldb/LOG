@@ -1,0 +1,17 @@
+2025/10/31-17:43:54.324 25fd Reusing MANIFEST /home/siddharth/.config/EasyEDA-Pro/cache.x64.3/Local Storage/leveldb/MANIFEST-000001
+2025/10/31-17:43:54.339 25fd Recovering log #134
+2025/10/31-17:43:54.345 25fd Level-0 table #137: started
+2025/10/31-17:43:54.353 25fd Level-0 table #137: 268884 bytes OK
+2025/10/31-17:43:54.354 25fd Delete type=0 #134
+2025/10/31-17:43:54.355 25fd Compacting 4@0 + 1@1 files
+2025/10/31-17:43:54.374 25fd Generated table #139@0: 7 keys, 277321 bytes
+2025/10/31-17:43:54.374 25fd Compacted 4@0 + 1@1 files => 277321 bytes
+2025/10/31-17:43:54.375 25fd compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/10/31-17:43:54.375 25fd Delete type=2 #137
+2025/10/31-17:43:54.375 25fd Delete type=2 #133
+2025/10/31-17:43:54.375 25fd Delete type=2 #129
+2025/10/31-17:43:54.375 25fd Delete type=2 #135
+2025/10/31-17:43:54.375 25fd Delete type=2 #131
+2025/10/31-17:44:56.497 25fe Level-0 table #141: started
+2025/10/31-17:44:56.507 25fe Level-0 table #141: 268772 bytes OK
+2025/10/31-17:44:56.509 25fe Delete type=0 #138

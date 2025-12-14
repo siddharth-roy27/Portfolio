@@ -1,0 +1,133 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "a00c0c0efcaaef537461735769f847cdae5cc965a200fb838f7382afd111968d",
+    "telemetry.devDeviceId": "f3afd773-0e62-4afe-81d9-90757ca4099d",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/siddharth/test%20project"
+            },
+            {
+                "folderUri": "file:///home/siddharth/noteforge-ai"
+            },
+            {
+                "folderUri": "file:///home/siddharth/ai-canvas-notes"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/siddharth/test%20project": "__default__profile__",
+            "file:///home/siddharth/signbridge/ml-models": "__default__profile__",
+            "file:///home/siddharth/signbridge": "__default__profile__",
+            "file:///home/siddharth/LAACS": "__default__profile__",
+            "file:///home/siddharth/red-laser-turret": "__default__profile__",
+            "file:///home/siddharth/Industrial_Controller/firmware": "__default__profile__",
+            "file:///home/siddharth/Industrial_Controller": "__default__profile__",
+            "file:///home/siddharth/reverse-proxy": "__default__profile__",
+            "file:///home/siddharth/noteforge-ai": "__default__profile__",
+            "file:///home/siddharth/distributed-kv-store": "__default__profile__",
+            "file:///home/siddharth/ai-canvas-notes": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#002b36",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#002b36",
+            "editorBackground": "#002b36",
+            "titleBarBackground": "#002c39",
+            "activityBarBackground": "#003847",
+            "sideBarBackground": "#00212b",
+            "statusBarBackground": "#00212b",
+            "statusBarNoFolderBackground": "#00212b"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 200,
+            "auxiliaryBarWidth": 534,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/siddharth/noteforge-ai",
+            "backupPath": "/home/siddharth/.config/Code/Backups/69817c832e59b70e0c1ce33ce5ad06e8",
+            "uiState": {
+                "mode": 0,
+                "x": 70,
+                "y": 27,
+                "width": 1850,
+                "height": 1053
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 200,
+            "auxiliaryBarWidth": 534,
+            "workspaces": {
+                "fb9240a4bffcb46e12e4700e081ddcb7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "0129caff717cfcbb11ba93dad258d30c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "2fce66d3c90d3d35b9e6f45debb34c63": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "b1c342dcba9b20ce100cea7ac05aebc3": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "3a99f48017a3013f265c9504dfd7faa8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "e37fae1d52aed568fff94293217f15f2": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "124950967d9da7be65b118a113dcb31e": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "4feba030609d01f2d7d967371119401e": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "aadb29dc9bdaa2038a9e9d6cdbad2c94": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "c397ebd206133c7f49cba3f4e8fb62c8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "a621ed6ba734e002a331fd9b4f05b7c8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "c1575ffd73ce8351a8853bdd3efcc220": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                }
+            }
+        }
+    }
+}

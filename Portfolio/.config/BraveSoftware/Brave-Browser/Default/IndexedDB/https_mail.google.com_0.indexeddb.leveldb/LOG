@@ -1,0 +1,27 @@
+2025/12/14-21:46:48.038 11e1 Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/14-21:46:48.038 11e1 Recovering log #59
+2025/12/14-21:46:48.040 11e1 Reusing old log /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000059.log 
+2025/12/14-21:46:49.738 11f1 Compacting 1@0 + 1@1 files
+2025/12/14-21:46:49.770 11f1 Generated table #62@0: 1206 keys, 2190148 bytes
+2025/12/14-21:46:49.770 11f1 Compacted 1@0 + 1@1 files => 2190148 bytes
+2025/12/14-21:46:49.771 11f1 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-21:46:49.772 11f1 Delete type=2 #58
+2025/12/14-21:46:49.772 11f1 Delete type=2 #60
+2025/12/14-21:46:53.744 11e2 Compacting 1@1 + 1@2 files
+2025/12/14-21:46:53.754 11e2 Generated table #63@1: 175 keys, 763208 bytes
+2025/12/14-21:46:53.754 11e2 Compacted 1@1 + 1@2 files => 763208 bytes
+2025/12/14-21:46:53.755 11e2 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/14-21:46:53.755 11e2 Delete type=2 #55
+2025/12/14-21:46:53.755 11e2 Delete type=2 #62
+2025/12/14-21:47:06.630 11e2 Level-0 table #65: started
+2025/12/14-21:47:06.659 11e2 Level-0 table #65: 3229179 bytes OK
+2025/12/14-21:47:06.661 11e2 Delete type=0 #59
+2025/12/14-21:47:09.045 11f3 Compacting 1@1 + 1@2 files
+2025/12/14-21:47:09.061 11f3 Generated table #66@1: 245 keys, 1046017 bytes
+2025/12/14-21:47:09.061 11f3 Compacted 1@1 + 1@2 files => 1046017 bytes
+2025/12/14-21:47:09.062 11f3 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/14-21:47:09.063 11f3 Delete type=2 #65
+2025/12/14-21:47:09.063 11f3 Delete type=2 #63
+2025/12/14-21:47:26.524 11e2 Level-0 table #68: started
+2025/12/14-21:47:26.550 11e2 Level-0 table #68: 3177580 bytes OK
+2025/12/14-21:47:26.551 11e2 Delete type=0 #64

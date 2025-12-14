@@ -1,0 +1,177 @@
+2025/12/14-06:08:32.884 e3f Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/mnojpmjdmbbfmejpflffifhffcmidifd/MANIFEST-000001
+2025/12/14-06:08:32.885 e3f Recovering log #1527
+2025/12/14-06:08:32.890 e3f Reusing old log /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/mnojpmjdmbbfmejpflffifhffcmidifd/001527.log 
+2025/12/14-06:13:33.967 e30 Level-0 table #1531: started
+2025/12/14-06:13:33.974 e30 Level-0 table #1531: 420478 bytes OK
+2025/12/14-06:13:33.976 e30 Delete type=0 #1527
+2025/12/14-06:23:34.212 e30 Compacting 1@0 + 1@1 files
+2025/12/14-06:23:34.221 e30 Generated table #1532@0: 31 keys, 106921 bytes
+2025/12/14-06:23:34.221 e30 Compacted 1@0 + 1@1 files => 106921 bytes
+2025/12/14-06:23:34.221 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-06:23:34.222 e30 Delete type=2 #1528
+2025/12/14-06:23:34.222 e30 Delete type=2 #1531
+2025/12/14-06:33:15.549 e2f Level-0 table #1534: started
+2025/12/14-06:33:15.555 e2f Level-0 table #1534: 422005 bytes OK
+2025/12/14-06:33:15.557 e2f Delete type=0 #1530
+2025/12/14-06:43:34.612 e30 Compacting 1@0 + 1@1 files
+2025/12/14-06:43:34.620 e30 Generated table #1535@0: 35 keys, 108054 bytes
+2025/12/14-06:43:34.620 e30 Compacted 1@0 + 1@1 files => 108054 bytes
+2025/12/14-06:43:34.621 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-06:43:34.621 e30 Delete type=2 #1532
+2025/12/14-06:43:34.621 e30 Delete type=2 #1534
+2025/12/14-06:52:49.837 e30 Level-0 table #1537: started
+2025/12/14-06:52:49.844 e30 Level-0 table #1537: 424990 bytes OK
+2025/12/14-06:52:49.845 e30 Delete type=0 #1533
+2025/12/14-07:02:35.073 e30 Compacting 1@0 + 1@1 files
+2025/12/14-07:02:35.082 e30 Generated table #1538@0: 48 keys, 110759 bytes
+2025/12/14-07:02:35.082 e30 Compacted 1@0 + 1@1 files => 110759 bytes
+2025/12/14-07:02:35.083 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-07:02:35.083 e30 Delete type=2 #1535
+2025/12/14-07:02:35.083 e30 Delete type=2 #1537
+2025/12/14-07:03:05.077 e2f Level-0 table #1540: started
+2025/12/14-07:03:05.084 e2f Level-0 table #1540: 424278 bytes OK
+2025/12/14-07:03:05.085 e2f Delete type=0 #1536
+2025/12/14-07:12:35.308 e30 Compacting 1@0 + 1@1 files
+2025/12/14-07:12:35.317 e30 Generated table #1541@0: 62 keys, 113094 bytes
+2025/12/14-07:12:35.317 e30 Compacted 1@0 + 1@1 files => 113094 bytes
+2025/12/14-07:12:35.317 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-07:12:35.318 e30 Delete type=2 #1538
+2025/12/14-07:12:35.318 e30 Delete type=2 #1540
+2025/12/14-07:17:38.442 e30 Level-0 table #1543: started
+2025/12/14-07:17:38.453 e30 Level-0 table #1543: 427552 bytes OK
+2025/12/14-07:17:38.455 e30 Delete type=0 #1539
+2025/12/14-07:31:35.731 e30 Compacting 1@0 + 1@1 files
+2025/12/14-07:31:35.738 e30 Generated table #1544@0: 74 keys, 115760 bytes
+2025/12/14-07:31:35.738 e30 Compacted 1@0 + 1@1 files => 115760 bytes
+2025/12/14-07:31:35.739 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-07:31:35.739 e30 Delete type=2 #1541
+2025/12/14-07:31:35.739 e30 Delete type=2 #1543
+2025/12/14-07:37:52.197 e30 Level-0 table #1546: started
+2025/12/14-07:37:52.205 e30 Level-0 table #1546: 428130 bytes OK
+2025/12/14-07:37:52.207 e30 Delete type=0 #1542
+2025/12/14-07:50:36.186 e30 Compacting 1@0 + 1@1 files
+2025/12/14-07:50:36.196 e30 Generated table #1547@0: 84 keys, 117205 bytes
+2025/12/14-07:50:36.196 e30 Compacted 1@0 + 1@1 files => 117205 bytes
+2025/12/14-07:50:36.197 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-07:50:36.197 e30 Delete type=2 #1544
+2025/12/14-07:50:36.197 e30 Delete type=2 #1546
+2025/12/14-07:54:17.263 e30 Level-0 table #1549: started
+2025/12/14-07:54:17.270 e30 Level-0 table #1549: 424272 bytes OK
+2025/12/14-07:54:17.272 e30 Delete type=0 #1545
+2025/12/14-08:04:36.520 e30 Level-0 table #1551: started
+2025/12/14-08:04:36.528 e30 Level-0 table #1551: 422774 bytes OK
+2025/12/14-08:04:36.530 e30 Delete type=0 #1548
+2025/12/14-08:10:43.780 e30 Level-0 table #1553: started
+2025/12/14-08:10:43.787 e30 Level-0 table #1553: 421622 bytes OK
+2025/12/14-08:10:43.789 e30 Delete type=0 #1550
+2025/12/14-08:15:37.907 e30 Level-0 table #1555: started
+2025/12/14-08:15:37.915 e30 Level-0 table #1555: 422013 bytes OK
+2025/12/14-08:15:37.917 e30 Delete type=0 #1552
+2025/12/14-08:15:37.918 e30 Compacting 4@0 + 1@1 files
+2025/12/14-08:15:37.932 e30 Generated table #1556@0: 91 keys, 115326 bytes
+2025/12/14-08:15:37.932 e30 Compacted 4@0 + 1@1 files => 115326 bytes
+2025/12/14-08:15:37.933 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-08:15:37.934 e30 Delete type=2 #1555
+2025/12/14-08:15:37.934 e30 Delete type=2 #1553
+2025/12/14-08:15:37.934 e30 Delete type=2 #1551
+2025/12/14-08:15:37.934 e30 Delete type=2 #1547
+2025/12/14-08:15:37.934 e30 Delete type=2 #1549
+2025/12/14-08:19:33.977 e30 Level-0 table #1558: started
+2025/12/14-08:19:33.985 e30 Level-0 table #1558: 422618 bytes OK
+2025/12/14-08:19:33.986 e30 Delete type=0 #1554
+2025/12/14-08:31:38.957 e30 Compacting 1@0 + 1@1 files
+2025/12/14-08:31:38.964 e30 Generated table #1559@0: 92 keys, 114701 bytes
+2025/12/14-08:31:38.965 e30 Compacted 1@0 + 1@1 files => 114701 bytes
+2025/12/14-08:31:38.965 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-08:31:38.966 e30 Delete type=2 #1556
+2025/12/14-08:31:38.966 e30 Delete type=2 #1558
+2025/12/14-08:40:22.124 e30 Level-0 table #1561: started
+2025/12/14-08:40:22.132 e30 Level-0 table #1561: 426998 bytes OK
+2025/12/14-08:40:22.133 e30 Delete type=0 #1557
+2025/12/14-08:50:40.355 e30 Compacting 1@0 + 1@1 files
+2025/12/14-08:50:40.361 e30 Generated table #1562@0: 97 keys, 113019 bytes
+2025/12/14-08:50:40.361 e30 Compacted 1@0 + 1@1 files => 113019 bytes
+2025/12/14-08:50:40.362 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-08:50:40.363 e30 Delete type=2 #1561
+2025/12/14-08:50:40.363 e30 Delete type=2 #1559
+2025/12/14-08:51:52.400 e30 Level-0 table #1564: started
+2025/12/14-08:51:52.412 e30 Level-0 table #1564: 425853 bytes OK
+2025/12/14-08:51:52.413 e30 Delete type=0 #1560
+2025/12/14-09:03:40.648 e30 Compacting 1@0 + 1@1 files
+2025/12/14-09:03:40.658 e30 Generated table #1565@0: 97 keys, 112692 bytes
+2025/12/14-09:03:40.658 e30 Compacted 1@0 + 1@1 files => 112692 bytes
+2025/12/14-09:03:40.659 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-09:03:40.659 e30 Delete type=2 #1564
+2025/12/14-09:03:40.659 e30 Delete type=2 #1562
+2025/12/14-09:21:41.064 e30 Compacting 1@1 + 1@2 files
+2025/12/14-09:21:41.070 e30 Generated table #1566@1: 23 keys, 110783 bytes
+2025/12/14-09:21:41.070 e30 Compacted 1@1 + 1@2 files => 110783 bytes
+2025/12/14-09:21:41.071 e30 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/14-09:21:41.072 e30 Delete type=2 #1565
+2025/12/14-09:21:41.072 e30 Delete type=2 #1526
+2025/12/14-09:23:01.144 e30 Level-0 table #1568: started
+2025/12/14-09:23:01.151 e30 Level-0 table #1568: 437300 bytes OK
+2025/12/14-09:23:01.153 e30 Delete type=0 #1563
+2025/12/14-09:36:41.416 e30 Compacting 1@1 + 1@2 files
+2025/12/14-09:36:41.424 e30 Generated table #1569@1: 36 keys, 113851 bytes
+2025/12/14-09:36:41.425 e30 Compacted 1@1 + 1@2 files => 113851 bytes
+2025/12/14-09:36:41.425 e30 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/14-09:36:41.426 e30 Delete type=2 #1566
+2025/12/14-09:36:41.426 e30 Delete type=2 #1568
+2025/12/14-09:37:52.498 e2f Level-0 table #1571: started
+2025/12/14-09:37:52.509 e2f Level-0 table #1571: 430003 bytes OK
+2025/12/14-09:37:52.511 e2f Delete type=0 #1567
+2025/12/14-09:43:58.175 e30 Level-0 table #1573: started
+2025/12/14-09:43:58.183 e30 Level-0 table #1573: 425402 bytes OK
+2025/12/14-09:43:58.185 e30 Delete type=0 #1570
+2025/12/14-09:51:42.345 e30 Compacting 1@0 + 1@1 files
+2025/12/14-09:51:42.351 e30 Generated table #1574@0: 30 keys, 112034 bytes
+2025/12/14-09:51:42.351 e30 Compacted 1@0 + 1@1 files => 112034 bytes
+2025/12/14-09:51:42.353 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-09:51:42.353 e30 Delete type=2 #1573
+2025/12/14-09:51:42.353 e30 Delete type=2 #1571
+2025/12/14-09:57:59.532 e30 Level-0 table #1576: started
+2025/12/14-09:57:59.539 e30 Level-0 table #1576: 430929 bytes OK
+2025/12/14-09:57:59.541 e30 Delete type=0 #1572
+2025/12/14-10:13:43.775 e30 Compacting 1@0 + 1@1 files
+2025/12/14-10:13:43.782 e30 Generated table #1577@0: 45 keys, 115086 bytes
+2025/12/14-10:13:43.782 e30 Compacted 1@0 + 1@1 files => 115086 bytes
+2025/12/14-10:13:43.783 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-10:13:43.783 e30 Delete type=2 #1574
+2025/12/14-10:13:43.783 e30 Delete type=2 #1576
+2025/12/14-10:17:25.895 e30 Level-0 table #1579: started
+2025/12/14-10:17:25.904 e30 Level-0 table #1579: 428594 bytes OK
+2025/12/14-10:17:25.905 e30 Delete type=0 #1575
+2025/12/14-10:20:43.957 e30 Level-0 table #1581: started
+2025/12/14-10:20:43.965 e30 Level-0 table #1581: 427325 bytes OK
+2025/12/14-10:20:43.967 e30 Delete type=0 #1578
+2025/12/14-10:22:12.000 e30 Level-0 table #1583: started
+2025/12/14-10:22:12.008 e30 Level-0 table #1583: 425684 bytes OK
+2025/12/14-10:22:12.010 e30 Delete type=0 #1580
+2025/12/14-10:27:41.240 e30 Level-0 table #1585: started
+2025/12/14-10:27:41.247 e30 Level-0 table #1585: 427509 bytes OK
+2025/12/14-10:27:41.249 e30 Delete type=0 #1582
+2025/12/14-10:27:41.250 e30 Compacting 4@0 + 1@1 files
+2025/12/14-10:27:41.266 e30 Generated table #1586@0: 82 keys, 119646 bytes
+2025/12/14-10:27:41.266 e30 Compacted 4@0 + 1@1 files => 119646 bytes
+2025/12/14-10:27:41.267 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-10:27:41.267 e30 Delete type=2 #1577
+2025/12/14-10:27:41.267 e30 Delete type=2 #1579
+2025/12/14-10:27:41.267 e30 Delete type=2 #1581
+2025/12/14-10:27:41.267 e30 Delete type=2 #1585
+2025/12/14-10:27:41.267 e30 Delete type=2 #1583
+2025/12/14-10:39:42.055 e2f Level-0 table #1588: started
+2025/12/14-10:39:42.063 e2f Level-0 table #1588: 427145 bytes OK
+2025/12/14-10:39:42.065 e2f Delete type=0 #1584
+2025/12/14-10:51:47.137 e30 Compacting 1@0 + 1@1 files
+2025/12/14-10:51:47.150 e30 Generated table #1589@0: 85 keys, 117909 bytes
+2025/12/14-10:51:47.150 e30 Compacted 1@0 + 1@1 files => 117909 bytes
+2025/12/14-10:51:47.151 e30 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-10:51:47.151 e30 Delete type=2 #1586
+2025/12/14-10:51:47.151 e30 Delete type=2 #1588
+2025/12/14-10:53:20.200 e30 Level-0 table #1591: started
+2025/12/14-10:53:20.208 e30 Level-0 table #1591: 428578 bytes OK
+2025/12/14-10:53:20.210 e30 Delete type=0 #1587
+2025/12/14-10:57:47.315 e30 Level-0 table #1593: started
+2025/12/14-10:57:47.321 e30 Level-0 table #1593: 428997 bytes OK
+2025/12/14-10:57:47.323 e30 Delete type=0 #1590

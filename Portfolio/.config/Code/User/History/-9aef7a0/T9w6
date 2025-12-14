@@ -1,0 +1,2 @@
+# Node.js backend Postgres connection
+DATABASE_URL="postgresql://postgres:noteforgeai123@db.lvqpvjdpzbaeddodhfnv.supabase.co:5432/postgres"

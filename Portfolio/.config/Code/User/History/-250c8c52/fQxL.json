@@ -1,0 +1,9 @@
+{
+    "animations.Install-Method": "Apc Customize UI++",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Solarized Dark",
+    "glassit.alpha": 240,
+    "apc.imports": [
+        "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ]
+}

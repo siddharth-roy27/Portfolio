@@ -1,0 +1,29 @@
+feat: Complete Phase 1 - basic reverse proxy with round-robin
+
+- Implemented request forwarding to multiple backends using LoadBalancer
+- Added safe_send() / safe_read() for robust socket handling
+- Fixed compiler warnings and ensured clean build
+- Backend health checks implemented (TCP-based, periodic)
+- Handles client disconnects, backend failures, and timeouts
+- Thread-safe round-robin load balancing
+- Ready for testing with multiple backends
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   Makefile
+#	modified:   configs/backends.conf
+#	modified:   include/backend.h
+#	modified:   include/load_balancer.h
+#	modified:   include/logger.h
+#	new file:   include/metrics.h
+#	modified:   src/backend.cpp
+#	modified:   src/load_balancer.cpp
+#	modified:   src/logger.cpp
+#	modified:   src/main.cpp
+#	new file:   src/metrics.cpp
+#

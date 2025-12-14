@@ -1,0 +1,18 @@
+2025/12/14-04:26:54.326 e04 Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_github.dev_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/14-04:26:54.326 e04 Recovering log #17
+2025/12/14-04:26:54.329 e04 Reusing old log /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_github.dev_0.indexeddb.leveldb/000017.log 
+2025/12/14-04:26:55.587 e04 Compacting 1@0 + 1@1 files
+2025/12/14-04:26:55.592 e04 Generated table #20@0: 1366 keys, 45121 bytes
+2025/12/14-04:26:55.592 e04 Compacted 1@0 + 1@1 files => 45121 bytes
+2025/12/14-04:26:55.593 e04 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/14-04:26:55.593 e04 Delete type=2 #18
+2025/12/14-04:26:55.593 e04 Delete type=2 #16
+2025/12/14-04:31:56.357 e04 Compacting 1@1 + 1@2 files
+2025/12/14-04:31:56.361 e04 Generated table #21@1: 349 keys, 94828 bytes
+2025/12/14-04:31:56.362 e04 Compacted 1@1 + 1@2 files => 94828 bytes
+2025/12/14-04:31:56.362 e04 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/14-04:31:56.363 e04 Delete type=2 #20
+2025/12/14-04:31:56.363 e04 Delete type=2 #11
+2025/12/14-04:51:07.358 e05 Level-0 table #23: started
+2025/12/14-04:51:07.366 e05 Level-0 table #23: 1372783 bytes OK
+2025/12/14-04:51:07.367 e05 Delete type=0 #17

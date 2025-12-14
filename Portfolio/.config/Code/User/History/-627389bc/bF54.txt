@@ -1,0 +1,2 @@
+pi:$(echo '123456789' | openssl passwd -6 -stdin)
+pi:$6$hGpUm8vaAeQ/x75I$1vIBN4FvKzEwbXbP4kwdyfqQCmZ2GH0YxhSEplYmfJteZGQQ1pWXKkJcAwbaH6RWLt15kC8DzVwEoMtDKo5Hh0

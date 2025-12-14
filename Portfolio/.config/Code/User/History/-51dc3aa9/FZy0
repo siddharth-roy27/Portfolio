@@ -1,0 +1,82 @@
+# Logs
+logs
+*.log
+.cache
+
+# Editors
+.node_repl_history
+.vscode-test
+
+# Snowpack
+web_modules/
+
+# Nuxt.js
+.nuxt
+dist
+
+# vuepress
+.vuepress/dist
+.temp
+.cache
+
+# SvelteKit
+.svelte-kit/
+
+# vitepress
+**/.vitepress/dist
+**/.vitepress/cache
+
+# Docusaurus
+.docusaurus
+
+# Serverless
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local
+.dynamodb/
+
+# Firebase
+.firebase/
+
+# TernJS
+.tern-port
+
+# Optional caches
+.npm
+.eslintcache
+.stylelintcache
+
+# Project generated artifacts
+*.tsbuildinfo
+next-env.d.ts
+/src/generated/prisma
+
+# NoteForge-AI
+# Docusaurus
+.docusaurus
+
+# Serverless
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local
+.dynamodb/
+
+# Firebase
+.firebase/
+
+# TernJS
+.tern-port
+
+# Optional caches
+.npm
+.eslintcache
+.stylelintcache
+
+# NoteForge-AI
+node_modules

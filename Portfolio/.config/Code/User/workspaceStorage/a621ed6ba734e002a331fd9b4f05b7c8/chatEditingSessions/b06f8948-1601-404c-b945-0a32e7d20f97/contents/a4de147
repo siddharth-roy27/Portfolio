@@ -1,0 +1,342 @@
+# ✨ NoteForge-AI
+
+> **The Ultimate AI-Powered Note-Taking Application** — Combine the power of rich text editing, real-time AI assistance, and secure cloud storage in one beautiful, intuitive platform.
+
+![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat-square&logo=tailwindcss)
+![Supabase](https://img.shields.io/badge/Supabase-Auth%20%26%20DB-3ECF8E?style=flat-square&logo=supabase)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
+---
+
+##  Overview
+
+NoteForge-AI is a **modern, full-stack note-taking application** that empowers users to create, organize, and enhance their notes with real-time AI assistance. Built with cutting-edge technologies, it delivers a seamless experience for productivity and knowledge management.
+
+### Why NoteForge-AI?
+
+ **Rich Text Editing** — Professional-grade editor with formatting, tables, images, and more  
+ **AI-Powered Intelligence** — Summarize and improve your notes with OpenAI  
+ **Secure Authentication** — User accounts with Supabase Auth  
+ **Cloud Storage** — All notes backed by PostgreSQL  
+ **Dark Mode** — Beautiful light/dark theme with persistent preferences  
+ **Responsive Design** — Works flawlessly on desktop, tablet, and mobile  
+ **SSR-Safe** — Next.js App Router with proper hydration handling  
+
+---
+
+##  Key Features
+
+### 📝 Advanced Rich Text Editor
+- **TipTap-powered** editing with StarterKit extensions
+- **Formatting**: Bold, italic, underline, headings, bullet lists, numbered lists
+- **Tables**: Insert and manage complex table layouts
+- **Images**: Upload and embed images directly into notes
+- **Markdown Mode Toggle**: Switch between visual and markdown editing
+- **Text Styling**: Font family picker (Sans, Serif, Mono), custom font colors
+- **Undo/Redo**: Full edit history support
+
+### 🧠 AI-Powered Enhancements
+- **Summarize**: Generate concise summaries of long notes using OpenAI
+- **Improve**: Get AI suggestions to enhance clarity and quality
+- **Real-time Processing**: Debounced AI calls for smooth performance
+- **Smart Content Generation**: Charts, graphs, and visual data representation
+
+### 📊 Data Visualization
+- **Chart Insertion**: Create line, bar, and pie charts directly in notes
+- **SVG-based Rendering**: Lightweight, scalable charts
+- **PPT Support**: Import slides from PowerPoint presentations
+- **File Imports**: Extract text from PDF and DOCX documents
+
+### 🔐 Security & Authentication
+- **Supabase Auth**: Secure login/signup with email
+- **Session Management**: Automatic user persistence
+- **Protected Routes**: Dashboard and editor accessible only to authenticated users
+- **Database-backed Notes**: All data encrypted and stored in PostgreSQL
+
+### 🎨 User Experience
+- **Dark/Light Mode**: Toggle theme with localStorage persistence
+- **Responsive Grid Layout**: Optimized sidebar + editor layout
+- **Loading States**: Visual feedback for saves, uploads, and AI processing
+- **Error Handling**: User-friendly error messages and alerts
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | Next.js 14.2 (App Router) | Server-rendered React app |
+| **Styling** | Tailwind CSS 4 + classnames | Responsive, dark-mode-ready UI |
+| **Editor** | TipTap 3.13 | Rich text editing with extensions |
+| **Database** | Supabase (PostgreSQL) | Note storage & user data |
+| **Auth** | Supabase Auth | Secure user authentication |
+| **AI** | OpenAI API (GPT-4o Mini) | Text summarization & improvement |
+| **Language** | TypeScript 5 | Type-safe development |
+| **Form Handling** | Native FormData API | File uploads & API calls |
+
+### Core Dependencies
+```json
+{
+  "@tiptap/react": "^3.13.0",
+  "@tiptap/starter-kit": "Latest",
+  "@tiptap/extension-*": "Color, TextStyle, Image, Link, Table, Underline",
+  "@supabase/supabase-js": "^2.x",
+  "next": "^14.2.33",
+  "react": "^19.0.0",
+  "tailwindcss": "^4.0.0"
+}
+```
+
+---
+
+## 📦 Installation & Setup
+
+### Prerequisites
+- **Node.js** 18+ and npm
+- **Git** for version control
+- **Supabase Account** (free tier available at [supabase.com](https://supabase.com))
+- **OpenAI API Key** (for AI features)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/siddharth-roy27/NoteForge-AI.git
+cd NoteForge-AI
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+Or with Yarn/PNPM:
+```bash
+yarn install
+# or
+pnpm install
+```
+
+### 3. Environment Setup
+
+Create a `.env.local` file in the root directory:
+
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+# OpenAI (for AI features)
+OPENAI_API_KEY=sk-your-api-key-here
+```
+
+**How to get these values:**
+1. **Supabase URL & Anon Key**: Visit [Supabase Dashboard](https://app.supabase.com) → Project Settings → API
+2. **OpenAI API Key**: Create account at [openai.com](https://openai.com) and generate API keys
+
+### 4. Database Setup (Supabase)
+
+Create a `notes` table in Supabase:
+
+```sql
+CREATE TABLE notes (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES auth.users ON DELETE CASCADE,
+  title TEXT,
+  content TEXT,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX ON notes(user_id);
+```
+
+### 5. Run Development Server
+
+```bash
+npm run dev
+```
+
+Open **http://localhost:3000** in your browser.
+
+### 6. Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+##  Project Structure
+
+```
+noteforge-ai/
+├── app/
+│   ├── api/                      # API routes
+│   │   ├── ai/summarize/         # OpenAI text processing
+│   │   ├── auth/                 # Login, signup, logout endpoints
+│   │   ├── notes/                # CRUD operations for notes
+│   │   └── upload/               # File upload handler
+│   ├── auth/                     # Authentication pages (login/signup)
+│   ├── dashboard/                # Main note editor interface
+│   │   └── components/
+│   │       ├── Editor.tsx        # Rich text editor (TipTap)
+│   │       └── NoteCard.tsx      # Note preview card
+│   ├── globals.css               # Global styles + Tailwind
+│   ├── layout.tsx                # Root layout with theme
+│   └── page.tsx                  # Landing page
+├── components/
+│   └── Navbar.tsx                # Navigation + theme toggle
+├── lib/
+│   └── supabase.ts               # Supabase client initialization
+├── public/                       # Static assets
+├── package.json                  # Dependencies & scripts
+├── tsconfig.json                 # TypeScript configuration
+└── tailwind.config.ts            # Tailwind CSS configuration
+```
+
+---
+
+##  Usage Guide
+
+### Creating a Note
+1. Click **"New Note"** in the dashboard
+2. Enter a title
+3. Start typing or paste content
+4. Click **"Save"** to store
+
+### Using AI Features
+- **Summarize**: Select text → Click "Summarize" button
+- **Improve**: Select text → Click "Improve" for AI enhancement
+- Auto-save with debounced AI calls every 2 seconds
+
+### Formatting
+- Use toolbar buttons for **bold**, *italic*, <u>underline</u>
+- Insert **headings** (H1, H2, H3)
+- Create **lists** (bullet or numbered)
+- Add **tables** with customizable rows/columns
+
+### Advanced Features
+- 🎨 **Font Picker**: Change font family (Sans, Serif, Mono)
+- 🎨 **Color Picker**: Apply custom text colors
+- 📊 **Chart Insertion**: Generate line, bar, or pie charts
+- 📥 **File Import**: Upload PDF, DOCX, or PPTX
+- 🌙 **Theme Toggle**: Switch dark/light mode (saved to localStorage)
+
+---
+
+## 🔧 Configuration
+
+### Tailwind CSS
+Customize styles in `tailwind.config.ts`:
+```ts
+export default {
+  theme: {
+    extend: {
+      colors: {
+        // Add custom colors
+      }
+    }
+  }
+}
+```
+
+### TipTap Extensions
+Modify editor capabilities in `app/dashboard/components/Editor.tsx`:
+```tsx
+const editor = useEditor({
+  extensions: [
+    StarterKit,
+    // Add more extensions here
+  ]
+})
+```
+
+---
+
+## 🚨 Troubleshooting
+
+### "Module not found: '@/lib/supabase'"
+- Ensure `tsconfig.json` has correct path mappings
+- Rebuild with `npm run build`
+
+### "SSR Hydration Mismatch"
+- Editor uses `immediatelyRender: false` and mounted state check
+- Navbar wraps interactive elements in `mounted` guard
+- This is expected and handled correctly
+
+### "OpenAI API Error"
+- Verify `OPENAI_API_KEY` in `.env.local`
+- Check API key permissions and billing status
+
+### "Supabase Connection Failed"
+- Confirm `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- Network connectivity and Supabase service status
+
+---
+
+## 🔐 Security Best Practices
+
+✅ **Environment Variables**: Never commit `.env.local` to Git  
+✅ **API Keys**: Use server-side routes for sensitive operations  
+✅ **Database**: Row-level security (RLS) enforced on Supabase  
+✅ **Authentication**: Session tokens managed by Supabase Auth  
+✅ **HTTPS**: Always use HTTPS in production  
+
+---
+
+## 📊 Performance Optimizations
+
+- **Server-Side Rendering (SSR)**: Next.js App Router for fast initial loads
+- **Debounced AI Calls**: Reduces API calls while user is typing
+- **Image Optimization**: Next.js `Image` component for lazy loading
+- **CSS-in-JS**: Tailwind for minimal bundle size
+- **Code Splitting**: Dynamic imports for heavy components
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- **[TipTap](https://tiptap.dev/)** — Excellent headless editor
+- **[Supabase](https://supabase.com/)** — Open-source Firebase alternative
+- **[Next.js](https://nextjs.org/)** — React framework for production
+- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first CSS framework
+- **[OpenAI](https://openai.com/)** — AI text processing
+
+---
+
+## 📧 Support & Contact
+
+For questions, bugs, or feature requests:
+- Open an **[Issue](https://github.com/siddharth-roy27/NoteForge-AI/issues)**
+- Email: [your-email@example.com](mailto:your-email@example.com)
+- GitHub: [@siddharth-roy27](https://github.com/siddharth-roy27)
+
+---
+
+**Made with ❤️ by [Siddharth Roy](https://github.com/siddharth-roy27)**
+
+*Last updated: December 2025*
+

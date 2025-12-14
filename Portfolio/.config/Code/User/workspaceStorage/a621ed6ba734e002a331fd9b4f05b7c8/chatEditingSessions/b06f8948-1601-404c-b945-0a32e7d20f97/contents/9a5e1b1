@@ -1,0 +1,194 @@
+# 📋 Environment Variables Guide
+
+## Overview
+
+NoteForge-AI uses two environment files with clear separation of concerns:
+
+- **`.env`** → Server-side secrets (NEVER commit, use in production CI/CD)
+- **`.env.local`** → Local development (includes both public & secret keys)
+
+---
+
+## 🔓 PUBLIC Keys (Safe to Expose)
+
+These keys are prefixed with `NEXT_PUBLIC_` and are accessible from the browser:
+
+| Key | File | Purpose | Where Used |
+|-----|------|---------|-----------|
+| `NEXT_PUBLIC_SUPABASE_URL` | `.env.local` | Supabase project URL | Client-side (browser) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | `.env.local` | Supabase anonymous key | Client-side (browser) |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | `.env.local` | Stripe payment forms | Client-side (browser) |
+| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | `.env.local` | Google OAuth login | Client-side (browser) |
+
+**✅ Safe to commit** (won't be blocked by GitHub)
+
+---
+
+## 🔐 SECRET Keys (NEVER Expose to Client)
+
+These keys should ONLY be used on the server-side and NEVER accessed from the browser:
+
+### `.env.local` (Local Development)
+
+| Key | Purpose | Where Used | Visibility |
+|-----|---------|-----------|-----------|
+| `SUPABASE_SERVICE_ROLE_KEY` | Admin operations on Supabase | Server-side routes only | 🔐 Secret |
+| `DATABASE_URL` | Direct PostgreSQL connection | Server-side routes only | 🔐 Secret |
+| `STRIPE_SECRET_KEY` | Process payments, refunds | Server-side routes only | 🔐 Secret |
+| `STRIPE_RESTRICTED_KEY` | Optional: Limited Stripe permissions | Server-side routes only | 🔐 Secret |
+| `STRIPE_WEBHOOK_SECRET` | Verify Stripe webhook events | Server-side routes only | 🔐 Secret |
+| `GEMINI_API_KEY` | Call Google Gemini API | Server-side routes only | 🔐 Secret |
+| `GEMINI_API_KEY` | Call Google Gemini API | Server-side routes only | 🔐 Secret |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth backend | Server-side routes only | 🔐 Secret |
+| `NEXTAUTH_SECRET` | NextAuth session signing | Server-side routes only | 🔐 Secret |
+
+**❌ NEVER commit** (GitHub will block it)
+
+### `.env` (Production/CI-CD Only)
+
+Contains the same secret keys as `.env.local` but:
+- Used in production environments
+- Added to CI/CD secrets (GitHub, Vercel, etc.)
+- NEVER committed to Git
+
+---
+
+## 📌 Stripe Keys Explained
+
+Stripe provides **3 types of keys**:
+
+### 1. **Publishable Key** (`pk_test_...` or `pk_live_...`)
+- ✅ **Safe to expose publicly**
+- Used in **client-side code**
+- Front-end payment forms and Stripe.js
+- Prefixed with `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+
+```jsx
+// ✅ CLIENT-SIDE (Safe in browser)
+const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+```
+
+### 2. **Secret Key** (`sk_test_...` or `sk_live_...`)
+- 🔐 **KEEP SECRET — NEVER expose to client**
+- Used in **server-side routes only**
+- Process payments, refunds, customer management
+- Full API permissions
+
+```js
+// ✅ SERVER-SIDE ONLY (API route, never in browser)
+// app/api/stripe/create-checkout/route.ts
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+```
+
+### 3. **Restricted API Key** (`rk_test_...` or `rk_live_...`)
+- 🔐 **KEEP SECRET — Optional alternative**
+- More limited permissions than full Secret Key
+- Enhanced security (only what you need)
+- Use if you want finer control
+
+```js
+// ✅ SERVER-SIDE ONLY (Alternative to Secret Key)
+const stripe = new Stripe(process.env.STRIPE_RESTRICTED_KEY);
+```
+
+---
+
+## 📝 Key Placement Reference
+
+### `.env.local` (Local Development)
+
+```env
+# ✅ PUBLIC (Client-side safe)
+NEXT_PUBLIC_SUPABASE_URL="https://..."
+NEXT_PUBLIC_SUPABASE_ANON_KEY="eyJ..."
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
+NEXT_PUBLIC_GOOGLE_CLIENT_ID="957729..."
+
+# 🔐 SECRET (Server-side only)
+SUPABASE_SERVICE_ROLE_KEY="eyJ..."
+DATABASE_URL="postgresql://..."
+STRIPE_SECRET_KEY="sk_test_..."
+STRIPE_RESTRICTED_KEY="rk_test_..."
+STRIPE_WEBHOOK_SECRET="whsec_..."
+GEMINI_API_KEY="sk-proj-..."
+GEMINI_API_KEY="AIzaSy..."
+GOOGLE_CLIENT_SECRET="GOCSPX..."
+NEXTAUTH_SECRET="aTB2kR9p..."
+NEXTAUTH_URL="http://localhost:3000"
+NODE_ENV="development"
+```
+
+### `.env` (Production)
+
+```env
+# Same secret keys as .env.local
+DATABASE_URL="postgresql://..."
+SUPABASE_SERVICE_ROLE_KEY="eyJ..."
+STRIPE_SECRET_KEY="sk_live_..."
+GEMINI_API_KEY="sk-proj-..."
+GEMINI_API_KEY="AIzaSy..."
+GOOGLE_CLIENT_SECRET="GOCSPX..."
+NEXTAUTH_SECRET="<RANDOM_SECRET>"
+NEXTAUTH_URL="https://yourdomain.com"
+```
+
+---
+
+## 🚀 Setup Checklist
+
+- [ ] Create `.env.local` with all keys
+- [ ] Create `.env` with secret keys (for production/CI-CD)
+- [ ] Add `.env.local` to `.gitignore`
+- [ ] Add `.env` to `.gitignore` (if in monorepo, or handle with CI/CD secrets)
+- [ ] Verify `NEXT_PUBLIC_*` keys are safe to expose
+- [ ] Verify secret keys are server-side only (not in client code)
+- [ ] Test that browser doesn't have access to secret keys
+
+---
+
+## ⚠️ Security Best Practices
+
+1. **Never commit `.env.local`** or `.env` to Git
+2. **Never log secret keys** (use `console.log()` to verify they exist)
+3. **Use environment-specific keys** (test keys in dev, live keys in production)
+4. **Rotate keys regularly** (especially after security incidents)
+5. **Use GitHub Secrets** for CI/CD (Actions, Vercel, Netlify, etc.)
+6. **Lock down API permissions** (Stripe Restricted Key, Supabase RLS, etc.)
+
+---
+
+## 🔧 How to Generate Missing Keys
+
+### Gemini (Google) API Key
+1. Visit https://console.cloud.google.com/apis & enable the Generative AI (Gemini) API for your project
+2. Create an API key under **APIs & Services → Credentials**
+3. Copy to `.env.local` as `GEMINI_API_KEY`
+
+### Supabase Keys
+1. Go to https://app.supabase.com
+2. Select your project
+3. Settings → API → Copy URL and Anon Key
+4. Service Role Key is under API → Service Role (Secret)
+
+### Stripe Keys
+1. Go to https://dashboard.stripe.com
+2. Developers → API Keys
+3. Copy Publishable Key → `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+4. Copy Secret Key → `STRIPE_SECRET_KEY`
+5. Webhooks → Create endpoint → Copy Signing Secret → `STRIPE_WEBHOOK_SECRET`
+
+### Google OAuth
+1. Go to https://console.cloud.google.com
+2. Create OAuth 2.0 Client ID
+3. Copy Client ID → `NEXT_PUBLIC_GOOGLE_CLIENT_ID`
+4. Copy Client Secret → `GOOGLE_CLIENT_SECRET`
+
+### NextAuth Secret
+```bash
+openssl rand -base64 32
+```
+Copy output to `NEXTAUTH_SECRET`
+
+---
+
+**Updated:** December 14, 2025
