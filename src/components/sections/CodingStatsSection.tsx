@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ExternalLink, Trophy, Target, Flame, Star, Award, Code2 } from 'lucide-react';
+import { ExternalLink, Trophy, Star, Code2 } from 'lucide-react';
 
 interface PlatformStats {
   name: string;
@@ -155,54 +155,6 @@ const CodingStatsSection = () => {
           ))}
         </div>
 
-        {/* Activity Graph Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 glass-card p-6 md:p-8"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2.5 rounded-lg bg-neon-rose/10">
-              <Flame className="w-5 h-5 text-neon-rose" />
-            </div>
-            <h3 className="font-space font-semibold text-lg">Consistency & Progress</h3>
-          </div>
-          
-          {/* Activity Heatmap Style */}
-          <div className="grid grid-cols-12 md:grid-cols-24 gap-1.5">
-            {Array.from({ length: 72 }).map((_, i) => {
-              const intensity = Math.random();
-              let bgClass = 'bg-muted/30';
-              if (intensity > 0.8) bgClass = 'bg-primary';
-              else if (intensity > 0.6) bgClass = 'bg-primary/70';
-              else if (intensity > 0.4) bgClass = 'bg-primary/40';
-              else if (intensity > 0.2) bgClass = 'bg-primary/20';
-              
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.2, delay: 0.6 + i * 0.01 }}
-                  className={`aspect-square rounded-sm ${bgClass}`}
-                />
-              );
-            })}
-          </div>
-          
-          <div className="flex items-center justify-end gap-2 mt-4">
-            <span className="text-xs text-muted-foreground">Less</span>
-            <div className="flex gap-1">
-              <div className="w-3 h-3 rounded-sm bg-muted/30" />
-              <div className="w-3 h-3 rounded-sm bg-primary/20" />
-              <div className="w-3 h-3 rounded-sm bg-primary/40" />
-              <div className="w-3 h-3 rounded-sm bg-primary/70" />
-              <div className="w-3 h-3 rounded-sm bg-primary" />
-            </div>
-            <span className="text-xs text-muted-foreground">More</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

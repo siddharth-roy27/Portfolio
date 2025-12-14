@@ -56,7 +56,7 @@ const Navbar = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              SR.
+              Siddharth
             </motion.a>
 
             {/* Desktop Nav */}

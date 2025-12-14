@@ -39,14 +39,14 @@ const ContactSection = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/siddharthroy',
-      username: '@siddharthroy',
+      href: 'https://github.com/siddharth-roy27',
+      username: '@siddharth-roy27',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/siddharthroy',
-      username: '/in/siddharthroy',
+      href: 'https://www.linkedin.com/in/siddharth-roy-12695628a/',
+      username: '/in/siddharth-roy',
     },
   ];
 
