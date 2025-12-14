@@ -88,11 +88,11 @@ const AboutSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-primary/10 border border-primary/20">
-                  <Award className="w-6 h-6 text-primary" />
+                <div className="p-3 rounded-xl bg-neon-amber/10 border border-neon-amber/20">
+                  <Award className="w-6 h-6 text-neon-amber" />
                 </div>
                 <div>
-                  <h3 className="font-space font-semibold text-lg mb-1">Positions</h3>
+                  <h3 className="font-space font-semibold text-lg mb-1">Leadership</h3>
                   <p className="body-text">Vice President, Team Phocus</p>
                   <p className="caption-text">Official Photography & Filmmaking Club, NIT Jamshedpur</p>
                 </div>

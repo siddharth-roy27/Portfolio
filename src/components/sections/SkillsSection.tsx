@@ -94,11 +94,6 @@ const eceSkills: SkillCategory[] = [
   },
 ];
 
-const codingPlatforms = [
-  { name: 'LeetCode', href: 'https://leetcode.com/u/siddharthroy2708/', color: 'text-amber-400' },
-  { name: 'Codeforces', href: 'https://codeforces.com/profile/siddharthroy2708', color: 'text-blue-400' },
-  { name: 'HackerRank', href: 'https://www.hackerrank.com/profile/siddharthroy2708', color: 'text-emerald-400' },
-];
 
 const SkillsSection = () => {
   const ref = useRef(null);
@@ -176,38 +171,6 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Coding Platforms (only for software domain) */}
-        {domain === 'software' && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="glass-card p-6 md:p-8"
-          >
-            <h3 className="font-space text-xl font-semibold mb-6 text-center">
-              Competitive Programming
-            </h3>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              {codingPlatforms.map((platform, index) => (
-                <motion.a
-                  key={platform.name}
-                  href={platform.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex items-center gap-3 px-6 py-4 rounded-xl bg-muted/50 border border-white/5 cursor-pointer interactive-hover"
-                >
-                  <span className={`font-mono font-medium ${platform.color}`}>
-                    {platform.name}
-                  </span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        )}
       </div>
     </section>
   );

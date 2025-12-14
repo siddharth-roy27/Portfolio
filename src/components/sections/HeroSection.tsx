@@ -84,7 +84,7 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-4"
           >
             {[
-              { icon: Github, href: 'https://github.com/siddharthroy2708', label: 'GitHub' },
+              { icon: Github, href: 'https://github.com/siddharth-roy27', label: 'GitHub' },
               { icon: Linkedin, href: 'https://linkedin.com/in/siddharthroy2708', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:siddharthroy2708@gmail.com', label: 'Email' },
               { icon: FileText, href: '#resume', label: 'Resume' },
