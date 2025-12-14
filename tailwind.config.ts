@@ -53,9 +53,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: {
-          blue: "hsl(var(--neon-blue))",
+          cyan: "hsl(var(--neon-cyan))",
+          amber: "hsl(var(--neon-amber))",
           mint: "hsl(var(--neon-mint))",
           purple: "hsl(var(--neon-purple))",
+          rose: "hsl(var(--neon-rose))",
         },
       },
       borderRadius: {

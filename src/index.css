@@ -16,45 +16,47 @@
     --popover: 220 18% 10%;
     --popover-foreground: 210 40% 98%;
 
-    /* Electric Blue Primary */
-    --primary: 210 100% 65%;
+    /* Cyan Primary - Less Blue */
+    --primary: 185 85% 55%;
     --primary-foreground: 220 20% 6%;
 
-    /* Mint Secondary */
-    --secondary: 155 100% 73%;
+    /* Amber Secondary */
+    --secondary: 38 95% 60%;
     --secondary-foreground: 220 20% 6%;
+
+    /* Mint Accent */
+    --accent: 155 80% 65%;
+    --accent-foreground: 220 20% 6%;
 
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 55%;
-
-    --accent: 155 100% 73%;
-    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 210 100% 65%;
+    --ring: 185 85% 55%;
 
     --radius: 0.75rem;
 
     /* Custom Neo-Tech Colors */
-    --neon-blue: 210 100% 65%;
-    --neon-mint: 155 100% 73%;
-    --neon-purple: 270 100% 70%;
+    --neon-cyan: 185 85% 55%;
+    --neon-amber: 38 95% 60%;
+    --neon-mint: 155 80% 65%;
+    --neon-purple: 270 80% 65%;
+    --neon-rose: 345 80% 65%;
     --dark-surface: 220 18% 10%;
     --dark-elevated: 220 16% 14%;
-    --glow-blue: 210 100% 65%;
-    --glow-mint: 155 100% 73%;
 
     /* Glassmorphism */
     --glass-bg: 220 20% 6% / 0.6;
     --glass-border: 210 40% 98% / 0.1;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 65%) 0%, hsl(155 100% 73%) 100%);
-    --gradient-glow: linear-gradient(135deg, hsl(210 100% 65% / 0.3) 0%, hsl(155 100% 73% / 0.3) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(185 85% 55%) 0%, hsl(155 80% 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(38 95% 60%) 0%, hsl(345 80% 65%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(185 85% 55% / 0.3) 0%, hsl(155 80% 65% / 0.3) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(220 20% 6%) 0%, hsl(220 18% 10%) 100%);
   }
 
