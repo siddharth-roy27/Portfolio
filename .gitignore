@@ -42,3 +42,4 @@ __pycache__
 *.md
 !README.md
 .config/Code/CachedExtensionVSIXs/
+.config/Code/CachedExtensionVSIXs/
