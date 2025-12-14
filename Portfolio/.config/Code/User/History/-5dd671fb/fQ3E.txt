@@ -1,7 +1,0 @@
-numpy
-pyyaml
-imutils
-opencv-python
-picamera2
-RPi.GPIO
-gpiozero

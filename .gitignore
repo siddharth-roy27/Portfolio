@@ -28,7 +28,7 @@ dist-ssr
 .env.local
 .env.production
 
-# Unnecessary directories that shouldn't be in Portfolio
+# Unnecessary files and directories
 .local
 Downloads
 Desktop
@@ -37,9 +37,28 @@ noteforge-ai
 *.py
 __pycache__
 *.pyc
+cap_%d
+estension.sh
+init_firmware_project.fish
+*.tar.gz
+*.deb
+map.pgm
+map.yaml
+test.py
+vite.config.ts.timestamp-*.mjs
+
+# System config files
+.config/
+.bash_history
+.bash_logout
+.bashrc
+.gitconfig
+.lesshst
+.profile
+.profile.bak
+.sudo_as_admin_successful
+.wget-hsts
 
 # Markdown files (exclude all except README.md)
 *.md
 !README.md
-.config/Code/CachedExtensionVSIXs/
-.config/Code/CachedExtensionVSIXs/

@@ -1,9 +1,0 @@
-2025/12/14-06:08:32.580 e3f Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/MANIFEST-000001
-2025/12/14-06:08:32.581 e3f Recovering log #41
-2025/12/14-06:08:32.582 e3f Reusing old log /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/000041.log 
-2025/12/14-07:38:26.323 e2f Compacting 1@0 + 1@1 files
-2025/12/14-07:38:26.328 e2f Generated table #44@0: 39 keys, 2040 bytes
-2025/12/14-07:38:26.328 e2f Compacted 1@0 + 1@1 files => 2040 bytes
-2025/12/14-07:38:26.329 e2f compacted to: files[ 0 1 1 0 0 0 0 ]
-2025/12/14-07:38:26.329 e2f Delete type=2 #39
-2025/12/14-07:38:26.329 e2f Delete type=2 #42

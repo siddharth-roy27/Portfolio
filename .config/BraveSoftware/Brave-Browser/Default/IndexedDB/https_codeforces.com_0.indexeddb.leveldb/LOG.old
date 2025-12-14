@@ -1,6 +1,0 @@
-2025/12/13-20:42:49.998 e04 Creating DB /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_codeforces.com_0.indexeddb.leveldb since it was missing.
-2025/12/13-20:42:50.000 e04 Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_codeforces.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/12/13-20:42:52.113 e05 Level-0 table #5: started
-2025/12/13-20:42:52.114 e05 Level-0 table #5: 855 bytes OK
-2025/12/13-20:42:52.116 e05 Delete type=0 #3
-2025/12/13-20:42:52.116 e05 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

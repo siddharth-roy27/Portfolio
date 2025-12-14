@@ -1,9 +1,0 @@
-file:///home/siddharth/test%20project/hi.c {"mtime":1752688137064,"ctime":1752681464908,"size":81,"etag":"3ehgemjil2j","orphaned":false,"typeId":""}
-
-#include <stdio.h>
-
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
-

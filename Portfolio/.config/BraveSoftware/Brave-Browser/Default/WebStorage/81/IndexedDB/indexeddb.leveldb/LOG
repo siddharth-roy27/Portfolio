@@ -1,6 +1,0 @@
-2025/12/11-04:22:51.803 11e9 Creating DB /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/WebStorage/81/IndexedDB/indexeddb.leveldb since it was missing.
-2025/12/11-04:22:51.806 11e9 Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/WebStorage/81/IndexedDB/indexeddb.leveldb/MANIFEST-000001
-2025/12/11-04:22:51.839 120b Level-0 table #5: started
-2025/12/11-04:22:51.840 120b Level-0 table #5: 1403 bytes OK
-2025/12/11-04:22:51.841 120b Delete type=0 #3
-2025/12/11-04:22:51.841 11e7 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
