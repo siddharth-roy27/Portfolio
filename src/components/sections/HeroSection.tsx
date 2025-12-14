@@ -85,7 +85,7 @@ const HeroSection = () => {
           >
             {[
               { icon: Github, href: 'https://github.com/siddharth-roy27', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/siddharthroy2708', label: 'LinkedIn' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/siddharth-roy-12695628a/', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:siddharthroy2708@gmail.com', label: 'Email' },
               { icon: FileText, href: '#resume', label: 'Resume' },
             ].map(({ icon: Icon, href, label }) => (

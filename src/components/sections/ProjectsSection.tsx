@@ -20,7 +20,7 @@ const softwareProjects: Project[] = [
     title: 'Multi-threaded Reverse Proxy Server',
     description: 'High-performance reverse proxy handling 5,000+ concurrent connections with epoll-based I/O, custom thread pool, and asynchronous logging.',
     tech: ['C++', 'epoll', 'Thread Pool', 'HTTP Parsing', 'Load Balancing', 'LRU Cache'],
-    github: 'https://github.com/siddharthroy',
+    github: 'https://github.com/siddharth-roy27/reverse-proxy',
     icon: <Layers className="w-6 h-6" />,
     highlights: [
       'epoll-based async I/O',
@@ -33,7 +33,7 @@ const softwareProjects: Project[] = [
     subtitle: 'AI-Enhanced Notion-Style Notes App',
     description: 'Full-stack SaaS notes platform with AI assistance, enabling 100+ concurrent users with 50% faster note creation via AI summarization.',
     tech: ['Next.js 15', 'TypeScript', 'PostgreSQL', 'Prisma', 'OpenAI API', 'WebSockets', 'Stripe'],
-    github: 'https://github.com/siddharthroy',
+    github: 'https://github.com/siddharth-roy27/NoteForge-AI',
     icon: <Code2 className="w-6 h-6" />,
     highlights: [
       'Real-time WebSocket sync',
@@ -46,7 +46,7 @@ const softwareProjects: Project[] = [
     subtitle: 'Raft-Based Consensus',
     description: 'Fault-tolerant distributed KV store with 3–5 node clusters, ensuring 100% data consistency using Raft consensus and leader election.',
     tech: ['Go', 'gRPC', 'Protobuf', 'Raft Consensus', 'WAL Storage'],
-    github: 'https://github.com/siddharthroy',
+    github: 'https://github.com/siddharth-roy27/Distributed-kv-store',
     icon: <Zap className="w-6 h-6" />,
     highlights: [
       'Leader election & log replication',
