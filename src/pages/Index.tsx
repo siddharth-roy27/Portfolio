@@ -10,6 +10,7 @@ import CodingStatsSection from '@/components/sections/CodingStatsSection';
 import ResumeSection from '@/components/sections/ResumeSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
+import BackgroundMusic from '@/components/BackgroundMusic';
 
 const Index = () => {
   return (
@@ -35,6 +36,9 @@ const Index = () => {
         
         {/* Footer */}
         <Footer />
+        
+        {/* Background Music Player */}
+        <BackgroundMusic />
       </div>
     </DomainProvider>
   );

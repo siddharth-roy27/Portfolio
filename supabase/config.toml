@@ -1,0 +1,4 @@
+project_id = "dpkfixndulldieqxznmj"
+
+[functions.coding-stats]
+verify_jwt = false
