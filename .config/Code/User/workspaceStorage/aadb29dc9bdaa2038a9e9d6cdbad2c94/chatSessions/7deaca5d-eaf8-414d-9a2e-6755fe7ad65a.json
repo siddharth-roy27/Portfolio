@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "requesterUsername": "siddharth-roy27",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/213352460",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [],
+  "sessionId": "7deaca5d-eaf8-414d-9a2e-6755fe7ad65a",
+  "creationDate": 1763747875224,
+  "isImported": false,
+  "lastMessageDate": 1763747875224
+}

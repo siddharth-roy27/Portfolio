@@ -8,35 +8,63 @@ const BackgroundMusic = () => {
   const [showPulse, setShowPulse] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Synthwave ambient music URL (royalty-free)
-  const musicUrl = 'https://cdn.pixabay.com/audio/2022/10/25/audio_4f3b0a816e.mp3';
+  // Tron-like ECE/Synthwave ambient music (royalty-free)
+  // Using multiple fallback URLs for reliability
+  const musicUrls = [
+    'https://cdn.pixabay.com/audio/2022/10/25/audio_4f3b0a816e.mp3', // Synthwave ambient
+    'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', // Fallback 1
+    'https://archive.org/download/SynthwaveAmbientLoop/SynthwaveAmbientLoop.mp3', // Fallback 2
+  ];
 
   useEffect(() => {
-    const audio = new Audio(musicUrl);
+    // Try to load audio with fallbacks
+    let currentUrlIndex = 0;
+    const audio = new Audio();
     audio.loop = true;
-    audio.volume = 0.15;
+    audio.volume = 0.2;
     audio.preload = 'auto';
     
-    const handleCanPlay = () => {
-      setIsLoaded(true);
+    const tryLoadAudio = (index: number) => {
+      if (index >= musicUrls.length) {
+        console.warn('All audio URLs failed to load');
+        setIsLoaded(true);
+        return;
+      }
+      
+      audio.src = musicUrls[index];
+      
+      const handleCanPlay = () => {
+        setIsLoaded(true);
+        audioRef.current = audio;
+      };
+
+      const handleError = () => {
+        console.warn(`Audio URL ${index} failed, trying next...`);
+        tryLoadAudio(index + 1);
+      };
+
+      audio.addEventListener('canplaythrough', handleCanPlay, { once: true });
+      audio.addEventListener('loadeddata', handleCanPlay, { once: true });
+      audio.addEventListener('error', handleError, { once: true });
+      
+      // Try to load
+      audio.load();
     };
 
-    audio.addEventListener('canplaythrough', handleCanPlay);
-    audio.addEventListener('loadeddata', handleCanPlay);
+    tryLoadAudio(0);
     
-    // Fallback: show button after 2 seconds regardless
+    // Fallback: show button after 3 seconds regardless
     const fallbackTimer = setTimeout(() => {
       setIsLoaded(true);
-    }, 2000);
-
-    audioRef.current = audio;
+    }, 3000);
 
     return () => {
       clearTimeout(fallbackTimer);
-      audio.removeEventListener('canplaythrough', handleCanPlay);
-      audio.removeEventListener('loadeddata', handleCanPlay);
       audio.pause();
       audio.src = '';
+      audio.removeEventListener('canplaythrough', () => {});
+      audio.removeEventListener('loadeddata', () => {});
+      audio.removeEventListener('error', () => {});
     };
   }, []);
 
@@ -46,14 +74,90 @@ const BackgroundMusic = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleMute = () => {
-    if (audioRef.current) {
-      if (isMuted) {
-        audioRef.current.play().catch(console.error);
-      } else {
-        audioRef.current.pause();
+  const toggleMute = async () => {
+    if (!audioRef.current) {
+      // If audio not loaded, try to create it now with fallbacks
+      let audio: HTMLAudioElement | null = null;
+      for (const url of musicUrls) {
+        try {
+          audio = new Audio(url);
+          audio.loop = true;
+          audio.volume = 0.2;
+          audio.preload = 'auto';
+          // Test if this URL works
+          await new Promise((resolve, reject) => {
+            const timeout = setTimeout(() => reject(new Error('Timeout')), 2000);
+            audio!.addEventListener('canplay', () => {
+              clearTimeout(timeout);
+              resolve(true);
+            }, { once: true });
+            audio!.addEventListener('error', () => {
+              clearTimeout(timeout);
+              reject(new Error('Load failed'));
+            }, { once: true });
+            audio!.load();
+          });
+          audioRef.current = audio;
+          break;
+        } catch (e) {
+          console.warn(`Failed to load ${url}, trying next...`);
+          if (audio) {
+            audio.src = '';
+          }
+        }
       }
-      setIsMuted(!isMuted);
+      
+      if (!audioRef.current) {
+        console.error('All music URLs failed to load');
+        return;
+      }
+    }
+
+    if (audioRef.current) {
+      try {
+        if (isMuted) {
+          // Ensure audio is loaded before playing
+          if (audioRef.current.readyState < 2) {
+            await new Promise<void>((resolve, reject) => {
+              const timeout = setTimeout(() => {
+                reject(new Error('Audio load timeout'));
+              }, 5000);
+              
+              const handleCanPlay = () => {
+                clearTimeout(timeout);
+                audioRef.current?.removeEventListener('canplaythrough', handleCanPlay);
+                audioRef.current?.removeEventListener('error', handleError);
+                resolve();
+              };
+              
+              const handleError = (e: Event) => {
+                clearTimeout(timeout);
+                audioRef.current?.removeEventListener('canplaythrough', handleCanPlay);
+                audioRef.current?.removeEventListener('error', handleError);
+                reject(new Error('Audio failed to load'));
+              };
+              
+              audioRef.current.addEventListener('canplaythrough', handleCanPlay);
+              audioRef.current.addEventListener('error', handleError);
+              audioRef.current.load();
+            });
+          }
+          await audioRef.current.play();
+          setIsMuted(false);
+        } else {
+          audioRef.current.pause();
+          setIsMuted(true);
+        }
+      } catch (error) {
+        console.error('Error toggling audio:', error);
+        // If autoplay is blocked, the user interaction should have already happened
+        // so this shouldn't be an issue, but handle it gracefully
+        if (error instanceof Error) {
+          if (error.name === 'NotAllowedError') {
+            console.warn('Autoplay blocked - user interaction required');
+          }
+        }
+      }
     }
   };
 

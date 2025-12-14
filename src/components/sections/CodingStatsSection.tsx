@@ -101,7 +101,7 @@ const PlatformCard = ({
 const CodingStatsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const { leetcode, codeforces, loading } = useCodingStats();
+  const { leetcode, codeforces, hackerrank, loading, error } = useCodingStats();
 
   // Helper to format rank from ranking number
   const getLeetCodeRank = (ranking: number): string => {
@@ -129,11 +129,10 @@ const CodingStatsSection = () => {
             { label: 'Easy', value: String(leetcode.easySolved) },
             { label: 'Medium', value: String(leetcode.mediumSolved) },
             { label: 'Hard', value: String(leetcode.hardSolved) },
+            ...(leetcode.ranking > 0 ? [{ label: 'Global Ranking', value: `#${leetcode.ranking.toLocaleString()}` }] : []),
           ]
         : [
-            { label: 'Problems Solved', value: '300+' },
-            { label: 'Contest Rating', value: '1650+' },
-            { label: 'Global Rank', value: 'Top 15%' },
+            { label: 'Loading stats...', value: '...' },
           ],
       badges: ['100 Days', '50 Days', 'SQL'],
       rank: loading ? '...' : leetcode ? getLeetCodeRank(leetcode.ranking) : 'Knight',
@@ -151,12 +150,11 @@ const CodingStatsSection = () => {
         ? [
             { label: 'Current Rating', value: String(codeforces.rating) },
             { label: 'Max Rating', value: String(codeforces.maxRating) },
+            { label: 'Current Rank', value: codeforces.rank },
             { label: 'Max Rank', value: codeforces.maxRank },
           ]
         : [
-            { label: 'Max Rating', value: '1200+' },
-            { label: 'Problems Solved', value: '150+' },
-            { label: 'Contests', value: '25+' },
+            { label: 'Loading stats...', value: '...' },
           ],
       rank: loading ? '...' : codeforces?.rank || 'Pupil',
     },
@@ -167,11 +165,20 @@ const CodingStatsSection = () => {
       color: 'text-accent',
       bgColor: 'bg-accent/10',
       borderColor: 'border-accent/30',
-      stats: [
-        { label: 'Badges', value: '5⭐' },
-        { label: 'Certifications', value: '3+' },
-        { label: 'Skills Verified', value: '5+' },
-      ],
+      stats: loading
+        ? [{ label: 'Loading...', value: '...' }]
+        : hackerrank
+        ? [
+            { label: 'Badges', value: String(hackerrank.badges) },
+            { label: 'Certifications', value: String(hackerrank.certifications) },
+            { label: 'Skills Verified', value: String(hackerrank.skillsVerified) },
+            ...(hackerrank.contestRating && hackerrank.contestRating > 0 
+              ? [{ label: 'Contest Rating', value: String(hackerrank.contestRating) }] 
+              : []),
+          ]
+        : [
+            { label: 'Loading stats...', value: '...' },
+          ],
       badges: ['Problem Solving', 'Python', 'C++'],
     },
   ];
@@ -196,6 +203,16 @@ const CodingStatsSection = () => {
             <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
               <Loader2 className="w-4 h-4 animate-spin" />
               <span className="text-sm">Fetching live stats...</span>
+            </div>
+          )}
+          {error && (
+            <div className="mt-4 p-4 rounded-lg bg-destructive/10 border border-destructive/20">
+              <p className="text-sm text-destructive text-center">
+                ⚠️ {error}
+              </p>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                Make sure to deploy the Supabase Edge Function. See DEPLOY_SUPABASE_FUNCTION.md
+              </p>
             </div>
           )}
         </motion.div>

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "campaigns": [
+    {
+      "campaignId": "898a5995-bf0e-4c0c-84f4-48ab5d919f28",
+      "logo": {
+        "imageUrl": "9f4ae13d-bb6a-4ebb-b13c-31976692f434/1bf8e815-3513-4d86-b00a-8421d12ab057.png",
+        "destinationUrl": "https://brave.com/podcast/e91/?mtm_source=brave-browser&mtm_medium=brave-ntp&mtm_campaign=brave-technologist&mtm_content=podcast",
+        "alt": "The Brave Technologist Podcast with Luke Mulks",
+        "companyName": "Brave"
+      },
+      "wallpapers": [
+        {
+          "imageUrl": "9f4ae13d-bb6a-4ebb-b13c-31976692f434/5c83ce3f-91ed-4f00-a8a4-a8ce29677c45.jpg",
+          "creativeInstanceId": "393053c3-101e-48fb-8d69-113b4e5e59f9",
+          "focalPoint": {
+            "x": 1280,
+            "y": 720
+          }
+        },
+        {
+          "imageUrl": "9df0b5a8-19cb-4b70-ad31-054798e9ac89/08e22707-b19b-4041-836b-465785b35ce1.jpg",
+          "creativeInstanceId": "d11e4fc5-2a41-432b-b475-b3366fc3085c",
+          "focalPoint": {
+            "x": 1280,
+            "y": 720
+          },
+          "logo": {
+            "imageUrl": "9df0b5a8-19cb-4b70-ad31-054798e9ac89/1bf8e815-3513-4d86-b00a-8421d12ab057.png",
+            "destinationUrl": "https://brave.com/podcast/e91/?mtm_source=brave-browser&mtm_medium=brave-ntp&mtm_campaign=brave-technologist&mtm_content=podcast",
+            "alt": "The Brave Technologist Podcast with Luke Mulks",
+            "companyName": "Brave"
+          }
+        },
+        {
+          "imageUrl": "c9762268-7ac9-44f9-a78a-80c59ef77123/36f77192-e37a-49e7-8b10-1400c9421ea0.jpg",
+          "creativeInstanceId": "946d126e-a635-4c85-b150-8c4a55127439",
+          "focalPoint": {
+            "x": 1280,
+            "y": 720
+          },
+          "logo": {
+            "imageUrl": "c9762268-7ac9-44f9-a78a-80c59ef77123/1bf8e815-3513-4d86-b00a-8421d12ab057.png",
+            "destinationUrl": "https://brave.com/podcast/e91/?mtm_source=brave-browser&mtm_medium=brave-ntp&mtm_campaign=brave-technologist&mtm_content=podcast",
+            "alt": "The Brave Technologist Podcast with Luke Mulks",
+            "companyName": "Brave"
+          }
+        }
+      ]
+    }
+  ],
+  "campaigns2": [
+    {
+      "campaignId": "898a5995-bf0e-4c0c-84f4-48ab5d919f28",
+      "logo": {
+        "imageUrl": "9f4ae13d-bb6a-4ebb-b13c-31976692f434/1bf8e815-3513-4d86-b00a-8421d12ab057.png",
+        "destinationUrl": "https://brave.com/podcast/e91/?mtm_source=brave-browser&mtm_medium=brave-ntp&mtm_campaign=brave-technologist&mtm_content=podcast",
+        "alt": "The Brave Technologist Podcast with Luke Mulks",
+        "companyName": "Brave"
+      },
+      "wallpapers": [
+        {
+          "imageUrl": "9f4ae13d-bb6a-4ebb-b13c-31976692f434/5c83ce3f-91ed-4f00-a8a4-a8ce29677c45.jpg",
+          "creativeInstanceId": "393053c3-101e-48fb-8d69-113b4e5e59f9",
+          "focalPoint": {
+            "x": 1280,
+            "y": 720
+          }
+        },
+        {
+          "imageUrl": "9df0b5a8-19cb-4b70-ad31-054798e9ac89/08e22707-b19b-4041-836b-465785b35ce1.jpg",
+          "creativeInstanceId": "d11e4fc5-2a41-432b-b475-b3366fc3085c",
+          "focalPoint": {
+            "x": 1280,
+            "y": 720
+          },
+          "logo": {
+            "imageUrl": "9df0b5a8-19cb-4b70-ad31-054798e9ac89/1bf8e815-3513-4d86-b00a-8421d12ab057.png",
+            "destinationUrl": "https://brave.com/podcast/e91/?mtm_source=brave-browser&mtm_medium=brave-ntp&mtm_campaign=brave-technologist&mtm_content=podcast",
+            "alt": "The Brave Technologist Podcast with Luke Mulks",
+            "companyName": "Brave"
+          }
+        },
+        {
+          "imageUrl": "c9762268-7ac9-44f9-a78a-80c59ef77123/36f77192-e37a-49e7-8b10-1400c9421ea0.jpg",
+          "creativeInstanceId": "946d126e-a635-4c85-b150-8c4a55127439",
+          "focalPoint": {
+            "x": 1280,
+            "y": 720
+          },
+          "logo": {
+            "imageUrl": "c9762268-7ac9-44f9-a78a-80c59ef77123/1bf8e815-3513-4d86-b00a-8421d12ab057.png",
+            "destinationUrl": "https://brave.com/podcast/e91/?mtm_source=brave-browser&mtm_medium=brave-ntp&mtm_campaign=brave-technologist&mtm_content=podcast",
+            "alt": "The Brave Technologist Podcast with Luke Mulks",
+            "companyName": "Brave"
+          }
+        }
+      ]
+    }
+  ]
+}

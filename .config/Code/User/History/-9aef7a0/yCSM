@@ -1,0 +1,3 @@
+DATABASE_URL="postgresql://postgres:Siddhiroy2004@db.nkrsofvoamysklptydhw.supabase.co:5432/postgres?sslmode=require&options=--inet=4"
+
+

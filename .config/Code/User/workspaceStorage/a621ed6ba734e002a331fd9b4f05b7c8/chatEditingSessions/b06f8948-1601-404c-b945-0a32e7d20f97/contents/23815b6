@@ -1,0 +1,67 @@
+# NoteForge-AI
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Features
+- User authentication (login/signup)
+- Dashboard with note listing, creation, viewing, and editing
+- Rich text editor powered by TipTap
+- Supabase integration for database and auth
+- Tailwind CSS for styling
+
+## Getting Started
+
+First, install dependencies:
+
+```bash
+npm install
+Run the development server:
+
+bash
+Copy code
+npm run dev
+Open http://localhost:3000 with your browser to see the result.
+
+# NoteForge-AI
+
+A Next.js application for taking and organizing notes. This repository contains the frontend app, some backend helpers, and Prisma schema used by the project.
+
+Features
+- User authentication (Supabase)
+- Dashboard with note listing, creation, viewing, and editing
+- Rich text editor (TipTap)
+- Tailwind CSS styling
+
+Getting started
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Run the development server
+
+```bash
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
+Project structure (top-level)
+
+- `app/` — Next.js app directory (routes & pages)
+- `src/` — application source files
+- `public/` — static assets
+- `prisma/` — Prisma schema & migrations (if used)
+- `package.json` — project scripts and dependencies
+
+Learn more
+
+- Next.js: https://nextjs.org/docs
+- TipTap: https://tiptap.dev/
+
+License
+
+MIT
+

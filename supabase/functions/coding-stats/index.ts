@@ -22,11 +22,17 @@ interface CodeforcesStats {
   contribution: number;
 }
 
+interface HackerRankStats {
+  badges: number;
+  certifications: number;
+  skillsVerified: number;
+  contestRating?: number;
+}
+
 async function fetchLeetCodeStats(username: string): Promise<LeetCodeStats | null> {
   try {
     console.log(`Fetching LeetCode stats for ${username}`);
     
-    // Using LeetCode GraphQL API
     const response = await fetch('https://leetcode.com/graphql', {
       method: 'POST',
       headers: {
@@ -99,8 +105,64 @@ async function fetchCodeforcesStats(username: string): Promise<CodeforcesStats |
   }
 }
 
+async function fetchHackerRankStats(username: string): Promise<HackerRankStats | null> {
+  try {
+    console.log(`Fetching HackerRank stats for ${username}`);
+    
+    const profileUrl = `https://www.hackerrank.com/rest/contests/master/hackers/${username}/profile`;
+    
+    try {
+      const response = await fetch(profileUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        },
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('HackerRank API response:', JSON.stringify(data));
+        
+        if (data.model) {
+          const model = data.model;
+          return {
+            badges: model.badges?.length || 0,
+            certifications: model.certificates?.length || 0,
+            skillsVerified: model.skill_ratings?.length || 0,
+            contestRating: model.contest_rating || 0,
+          };
+        }
+      }
+    } catch (apiError) {
+      console.log('HackerRank API failed, trying alternative method...');
+    }
+    
+    const publicProfileUrl = `https://www.hackerrank.com/${username}`;
+    const htmlResponse = await fetch(publicProfileUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      },
+    });
+    
+    if (htmlResponse.ok) {
+      const html = await htmlResponse.text();
+      const badgeMatch = html.match(/badges["\s]*:[\s]*(\d+)/i);
+      const certMatch = html.match(/certificates["\s]*:[\s]*(\d+)/i);
+      
+      return {
+        badges: badgeMatch ? parseInt(badgeMatch[1]) : 0,
+        certifications: certMatch ? parseInt(certMatch[1]) : 0,
+        skillsVerified: 0,
+      };
+    }
+    
+    return null;
+  } catch (error) {
+    console.error('HackerRank fetch error:', error);
+    return null;
+  }
+}
+
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -115,6 +177,8 @@ serve(async (req) => {
       stats = await fetchLeetCodeStats(username);
     } else if (platform === 'codeforces') {
       stats = await fetchCodeforcesStats(username);
+    } else if (platform === 'hackerrank') {
+      stats = await fetchHackerRankStats(username);
     }
 
     if (stats) {
@@ -136,3 +200,4 @@ serve(async (req) => {
     });
   }
 });
+

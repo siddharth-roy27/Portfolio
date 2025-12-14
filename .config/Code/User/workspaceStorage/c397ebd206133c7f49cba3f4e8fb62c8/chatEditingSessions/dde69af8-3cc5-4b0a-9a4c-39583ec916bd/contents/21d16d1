@@ -1,0 +1,105 @@
+package main
+
+import (
+	"context"
+	"flag"
+	"fmt"
+	"log"
+	"net"
+	"strings"
+	"sync"
+
+	"google.golang.org/grpc"
+
+	pb "github.com/siddharth-roy27/distributed-kv-store/proto/kv"
+)
+
+// --- Minimal RaftNode implementation ---
+type RaftNode struct {
+	ID       string
+	Peers    []string
+	KVStore  map[string]string
+	Mu       sync.Mutex
+	IsLeader bool
+}
+
+func (rn *RaftNode) StartRaft() {
+	// For demo, first node becomes leader
+	if rn.ID == "node1" {
+		rn.IsLeader = true
+	} else {
+		rn.IsLeader = false
+	}
+	log.Printf("Raft node %s started (leader=%v)", rn.ID, rn.IsLeader)
+}
+
+// --- KV gRPC adapter ---
+type server struct {
+	pb.UnimplementedKVServer
+	raftNode *RaftNode
+}
+
+func (s *server) Get(ctx context.Context, req *pb.GetRequest) (*pb.GetResponse, error) {
+	s.raftNode.Mu.Lock()
+	defer s.raftNode.Mu.Unlock()
+
+	value, ok := s.raftNode.KVStore[req.Key]
+	return &pb.GetResponse{Value: value, Found: ok}, nil
+}
+
+func (s *server) Set(ctx context.Context, req *pb.SetRequest) (*pb.SetResponse, error) {
+	s.raftNode.Mu.Lock()
+	defer s.raftNode.Mu.Unlock()
+
+	if !s.raftNode.IsLeader {
+		return &pb.SetResponse{Success: false}, nil
+	}
+
+	s.raftNode.KVStore[req.Key] = req.Value
+	return &pb.SetResponse{Success: true}, nil
+}
+
+// --- main ---
+func main() {
+	nodeID := flag.String("id", "node1", "Raft node ID")
+	raftPort := flag.String("port", "8001", "Raft peer port")
+	kvPort := flag.String("grpc-port", "50051", "KV gRPC server port")
+	peersFlag := flag.String("peers", "", "Comma-separated list of peer host:ports")
+	flag.Parse()
+
+	peers := []string{}
+	if *peersFlag != "" {
+		for _, p := range strings.Split(*peersFlag, ",") {
+			t := strings.TrimSpace(p)
+			if t == "" {
+				continue
+			}
+			if !strings.Contains(t, ":") {
+				t = "localhost:" + t
+			}
+			peers = append(peers, t)
+		}
+	}
+
+	// Create Raft node
+	rn := &RaftNode{
+		ID:      *nodeID,
+		Peers:   peers,
+		KVStore: make(map[string]string),
+	}
+	rn.StartRaft()
+	log.Printf("Raft node started with ID: %s, listening on :%s (peers=%v)", *nodeID, *raftPort, peers)
+
+	// Start KV gRPC server
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%s", *kvPort))
+	if err != nil {
+		log.Fatalf("failed to listen on KV gRPC port %s: %v", *kvPort, err)
+	}
+	grpcServer := grpc.NewServer()
+	pb.RegisterKVServer(grpcServer, &server{raftNode: rn})
+
+	log.Printf("KV gRPC server listening on :%s", *kvPort)
+	if err := grpcServer.Serve(lis); err != nil {
+		log.Fatalf("failed to serve KV gRPC: %v", err)
+	}
+}

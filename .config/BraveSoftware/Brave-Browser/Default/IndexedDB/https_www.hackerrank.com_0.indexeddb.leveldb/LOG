@@ -1,0 +1,7 @@
+2025/12/14-10:23:30.572 e2f Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hackerrank.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/14-10:23:30.572 e2f Recovering log #3
+2025/12/14-10:23:30.572 e2f Reusing old log /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hackerrank.com_0.indexeddb.leveldb/000003.log 
+2025/12/14-10:54:05.397 e30 Level-0 table #5: started
+2025/12/14-10:54:05.402 e30 Level-0 table #5: 355038 bytes OK
+2025/12/14-10:54:05.403 e30 Delete type=0 #3
+2025/12/14-10:54:05.403 e30 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

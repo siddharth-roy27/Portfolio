@@ -1,0 +1,48 @@
+# ✅ .env (SERVER-ONLY — NEVER expose to client)
+# This file contains sensitive server-side keys
+# NEVER commit actual keys to Git — use placeholders in production
+
+# ===============================
+# DATABASE
+# ===============================
+DATABASE_URL="postgresql://postgres:noteforgeai123@db.lvqpvjdpzbaeddodhfnv.supabase.co:5432/postgres"
+
+# ===============================
+# SUPABASE (SERVER-ONLY)
+# ===============================
+SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cXB2amRwemJhZWRkb2RoZm52Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTM4MTc1MCwiZXhwIjoyMDgwOTU3NzUwfQ.4Kl3HrSK16tKWL1q3Ylklfmij6-OkEuh-ealg1GqxJU"
+
+# ===============================
+# STRIPE (SERVER-ONLY)
+# ===============================
+# 🔐 SECRET KEY: Never expose to browser
+STRIPE_SECRET_KEY="sk_test_51SdCtgPEPfW19pZomc88kWHfeuL2YjaZx7gEACQgR84LmXY9oSU4Cxj07aoFCD7prkpmbfGH5atfURcA9aeXuRvv00Vqctqxvv"
+
+# 🔐 RESTRICTED KEY: Optional, more secure alternative
+# STRIPE_RESTRICTED_KEY="rk_test_51SdCtgPEPfW19pZoNDnNcarTXvcB9VjR57CqqJScqlKiEv6kpahen3gHHguE2P8bl5OS6K1j1HFzrSDLsv7pzaKr00Bp5KmceV"
+
+# 🔐 WEBHOOK SECRET: For handling Stripe webhooks
+STRIPE_WEBHOOK_SECRET="whsec_your_webhook_secret_here"
+
+# ===============================
+# AI KEYS (SERVER-ONLY)
+# ===============================
+GEMINI_API_KEY="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"
+GEMINI_API_KEY="AIzaSyDQQUCwdClHRuBJZlZJCEXgigapyBXMkGk"
+
+# ===============================
+# AUTH (SERVER-ONLY)
+# ===============================
+# 🔐 Google OAuth Secret: Never expose to client
+GOOGLE_CLIENT_SECRET="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"
+
+# 🔐 NextAuth Secret: Generate with: openssl rand -base64 32
+NEXTAUTH_SECRET="Ft8MTEJOJ97J30v2RpVoWbFtny01A4+viaCe3NubazY="
+NEXTAUTH_URL="http://localhost:3000"
+
+# ===============================
+# SUPABASE (PUBLIC — also in .env.local)
+# ===============================
+# These are duplicated here for reference but should be in .env.local
+SUPABASE_URL="https://lvqpvjdpzbaeddodhfnv.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cXB2amRwemJhZWRkb2RoZm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzODE3NTAsImV4cCI6MjA4MDk1Nzc1MH0.w2AGnp0A8-5eI_E4d6W6dcENBgDY-Jof_uuxyHWHv6o"

@@ -1,0 +1,30 @@
+2025/12/14-06:08:32.895 5 Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/Session Storage/MANIFEST-000001
+2025/12/14-06:08:32.895 5 Recovering log #246
+2025/12/14-06:08:32.897 5 Reusing old log /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/Session Storage/000246.log 
+2025/12/14-06:09:50.692 7 Level-0 table #251: started
+2025/12/14-06:09:50.696 7 Level-0 table #251: 12954 bytes OK
+2025/12/14-06:09:50.697 7 Delete type=0 #246
+2025/12/14-06:20:01.901 7 Level-0 table #253: started
+2025/12/14-06:20:01.904 7 Level-0 table #253: 13839 bytes OK
+2025/12/14-06:20:01.906 7 Delete type=0 #250
+2025/12/14-07:05:03.182 5 Level-0 table #255: started
+2025/12/14-07:05:03.183 5 Level-0 table #255: 14693 bytes OK
+2025/12/14-07:05:03.185 5 Delete type=0 #252
+2025/12/14-08:33:03.180 5 Level-0 table #257: started
+2025/12/14-08:33:03.184 5 Level-0 table #257: 12995 bytes OK
+2025/12/14-08:33:03.186 5 Delete type=0 #254
+2025/12/14-08:33:03.186 5 Compacting 4@0 + 1@1 files
+2025/12/14-08:33:03.188 5 Generated table #258@0: 389 keys, 23430 bytes
+2025/12/14-08:33:03.188 5 Compacted 4@0 + 1@1 files => 23430 bytes
+2025/12/14-08:33:03.188 5 compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/12/14-08:33:03.189 5 Delete type=2 #251
+2025/12/14-08:33:03.189 5 Delete type=2 #255
+2025/12/14-08:33:03.189 5 Delete type=2 #253
+2025/12/14-08:33:03.189 5 Delete type=2 #248
+2025/12/14-08:33:03.189 5 Delete type=2 #257
+2025/12/14-09:56:03.181 7 Level-0 table #260: started
+2025/12/14-09:56:03.185 7 Level-0 table #260: 11274 bytes OK
+2025/12/14-09:56:03.188 7 Delete type=0 #256
+2025/12/14-10:52:06.178 7 Level-0 table #262: started
+2025/12/14-10:52:06.181 7 Level-0 table #262: 12107 bytes OK
+2025/12/14-10:52:06.183 7 Delete type=0 #259

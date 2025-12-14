@@ -1,0 +1,4 @@
+SUPABASE_URL="https://lvqpvjdpzbaeddodhfnv.supabase.co"
+SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cXB2amRwemJhZWRkb2RoZm52Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTM4MTc1MCwiZXhwIjoyMDgwOTU3NzUwfQ.4Kl3HrSK16tKWL1q3Ylklfmij6-OkEuh-ealg1GqxJU"
+# Prisma Database URL (direct Postgres host, NOT the pooler)
+DATABASE_URL="postgresql://postgres:noteforgeai123@db.lvqpvjdpzbaeddodhfnv.supabase.co:5432/postgres"

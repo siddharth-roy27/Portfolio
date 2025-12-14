@@ -1,0 +1,4 @@
+# .env
+DATABASE_URL="postgresql://postgres:siddhiroy2004@aws-1-ap-south-1.pooler.supabase.com:5432/postgres"
+SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cXB2amRwemJhZWRkb2ho
+fnvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzODE3NTAsImV4cCI6MjA4MDk1Nzc1MH0.w2AGnp0A8-5eI_E4d6W6dcENBgDY-Jof_uuxyHWHv6o"

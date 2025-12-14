@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot name="cingoloA">
+  <material name="default_material">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+
+  <link name="cingoloA_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://ananda_ghosh_description/meshes/cingoloA.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="default_material"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://ananda_ghosh_description/meshes/cingoloA.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-127.02026392066001 107.03202949130879 1.538343852323178" rpy="0 0 0"/>
+      <mass value="2057059.08203125"/>
+      <inertia ixx="349072.4597844891" ixy="-1046.5902306213975" ixz="-36.04359195753932" 
+               iyy="371767.8543206826" iyz="-10418.908535184339" izz="716520.3342620134"/>
+    </inertial>
+  </link>
+</robot>

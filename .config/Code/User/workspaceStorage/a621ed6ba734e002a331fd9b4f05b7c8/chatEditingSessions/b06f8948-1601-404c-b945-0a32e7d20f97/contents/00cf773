@@ -1,0 +1,119 @@
+# NoteForge AI - Complete Setup Instructions
+
+## 🚀 Quick Setup
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Set Up Environment Variables
+```bash
+# Copy the example file
+cp .env.local.example .env.local
+
+# Edit .env.local with your actual values
+# (The example file already has your keys filled in)
+```
+
+### 3. Set Up Supabase Database
+
+1. Go to your Supabase project: https://supabase.com/dashboard
+2. Navigate to **SQL Editor**
+3. Copy the contents of `supabase/migrations/001_initial_schema.sql`
+4. Paste and run it in the SQL Editor
+5. This will create all tables, RLS policies, and triggers
+
+### 4. Set Up Supabase Storage
+
+1. In Supabase Dashboard, go to **Storage**
+2. The SQL migration should have created the `note-attachments` bucket
+3. If not, create it manually:
+   - Name: `note-attachments`
+   - Public: `true`
+
+### 5. Set Up Stripe Webhook (Optional - for payments)
+
+1. In Stripe Dashboard, go to **Developers > Webhooks**
+2. Add endpoint: `https://yourdomain.com/api/stripe/webhook`
+3. Select events:
+   - `checkout.session.completed`
+   - `customer.subscription.updated`
+   - `customer.subscription.deleted`
+4. Copy the **Signing secret** to `STRIPE_WEBHOOK_SECRET` in `.env.local`
+
+### 6. Run the Development Server
+```bash
+npm run dev
+```
+
+## 🔧 Troubleshooting
+
+### Error: "Failed to create note"
+**Cause:** Database tables don't exist or RLS policies not set up
+
+**Fix:**
+1. Run the SQL migration in Supabase SQL Editor
+2. Verify tables exist: `profiles`, `notes`, `folders`, `tags`, `note_tags`
+3. Check RLS is enabled on all tables
+
+### Error: "Unauthorized" or "Permission denied"
+**Cause:** RLS policies not configured correctly
+
+**Fix:**
+1. Run the SQL migration (it includes all RLS policies)
+2. Verify user is authenticated
+3. Check Supabase Auth is working
+
+### Error: "Missing environment variable"
+**Cause:** `.env.local` not created or missing variables
+
+**Fix:**
+1. Create `.env.local` from `.env.local.example`
+2. Fill in all required variables
+3. Restart the dev server: `npm run dev`
+
+### AI Features Not Working
+**Cause:** API keys not set or invalid
+
+**Fix:**
+1. Check `GEMINI_API_KEY` or `OPENAI_API_KEY` in `.env.local`
+2. Verify API keys are valid
+3. Check API quotas/credits
+
+## 📋 Checklist
+
+- [ ] Dependencies installed (`npm install`)
+- [ ] `.env.local` created with all variables
+- [ ] SQL migration run in Supabase
+- [ ] Storage bucket `note-attachments` exists
+- [ ] RLS policies active
+- [ ] User can sign up/login
+- [ ] Can create notes
+- [ ] Can upload files
+- [ ] AI features work (optional)
+
+## 🎯 Next Steps
+
+1. **Test Authentication:**
+   - Sign up a new user
+   - Sign in with Google
+   - Sign in with email
+
+2. **Test Notes:**
+   - Create a new note
+   - Edit note content
+   - Add tags
+   - Create folders
+
+3. **Test Features:**
+   - Upload files
+   - Use AI summarize/improve
+   - Test file extraction
+
+## 📚 Additional Resources
+
+- See `API_KEYS.md` for all API keys documentation
+- See `BACKEND_SETUP.md` for backend API details
+- See `ENV_SETUP.md` for environment variable help
+

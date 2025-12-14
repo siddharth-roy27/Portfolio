@@ -1,0 +1,39 @@
+camera:
+  use_picamera2: true        # true = PiCamera2, false = OpenCV default
+  resolution: [640, 480]     # width x height
+  framerate: 30
+  headless: false            # set true for deployment without GUI preview
+
+detection:
+  mode: "red_dot"            # options: red_dot | aruco
+  red_hsv_lower1: [0, 120, 120]
+  red_hsv_upper1: [10, 255, 255]
+  red_hsv_lower2: [170, 120, 120]
+  red_hsv_upper2: [179, 255, 255]
+  min_radius_px: 2           # ignore small noise
+  aruco_dict: "DICT_4X4_50"  # fallback for calibration
+  aruco_marker_size_cm: 5.0
+
+hardware:
+  servo_x_pin: 17
+  servo_y_pin: 27
+  button_pin: 22
+  pulse_min_us: 500          # SG90 servo min pulse width
+  pulse_max_us: 2500         # SG90 servo max pulse width
+  pwm_hz: 50                 # Servo frequency (Hz)
+
+control:
+  center_tolerance_px: 18    # deadzone (px) to reduce jitter
+  kp_deg_per_px_x: 0.06      # proportional gain (X)
+  kp_deg_per_px_y: 0.06      # proportional gain (Y)
+  limit_deg_min: 10          # servo safe min angle
+  limit_deg_max: 170         # servo safe max angle
+  max_step_deg: 2.5          # max step change per frame
+
+ballistic_demo:
+  enabled: true              # default ballistic mode ON (toggle with button)
+  gravity_demo_gain: 0.0009  # fake bullet-drop scaling
+  max_offset_px: 80          # clamp correction
+
+logging:
+  file: "data/logs/tracker.log"

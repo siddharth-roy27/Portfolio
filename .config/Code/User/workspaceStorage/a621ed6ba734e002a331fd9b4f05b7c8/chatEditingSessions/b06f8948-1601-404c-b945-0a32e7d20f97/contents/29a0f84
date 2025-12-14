@@ -1,0 +1,83 @@
+# .env.local File Contents
+
+**IMPORTANT:** Create a file named `.env.local` in the project root with the following contents:
+
+```bash
+# ============================================
+# NoteForge AI - Local Environment Variables
+# ============================================
+# DO NOT COMMIT THIS FILE TO GIT!
+
+# ============================================
+# Supabase Configuration
+# ============================================
+NEXT_PUBLIC_SUPABASE_URL="https://lvqpvjdpzbaeddodhfnv.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cXB2amRwemJhZWRkb2RoZm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzODE3NTAsImV4cCI6MjA4MDk1Nzc1MH0.w2AGnp0A8-5eI_E4d6W6dcENBgDY-Jof_uuxyHWHv6o"
+
+SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cXB2amRwemJhZWRkb2RoZm52Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTM4MTc1MCwiZXhwIjoyMDgwOTU3NzUwfQ.4Kl3HrSK16tKWL1q3Ylklfmij6-OkEuh-ealg1GqxJU"
+DATABASE_URL="postgresql://postgres:noteforgeai123@db.lvqpvjdpzbaeddodhfnv.supabase.co:5432/postgres"
+
+# ============================================
+# Stripe Configuration
+# ============================================
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_51SdCtgPEPfW19pZoNDnNcarTXvcB9VjR57CqqJScqlKiEv6kpahen3gHHguE2P8bl5OS6K1j1HFzrSDLsv7pzaKr00Bp5KmceV"
+STRIPE_SECRET_KEY="rk_test_51SdCtgPEPfW19pZoNDnNcarTXvcB9VjR57CqqJScqlKiEv6kpahen3gHHguE2P8bl5OS6K1j1HFzrSDLsv7pzaKr00Bp5KmceV"
+# Get this from Stripe Dashboard > Webhooks > Your webhook > Signing secret
+STRIPE_WEBHOOK_SECRET="whsec_your_webhook_secret_here"
+
+# ============================================
+# AI Services
+# ============================================
+OPENAI_API_KEY="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"
+GEMINI_API_KEY="AIzaSyDQQUCwdClHRuBJZlZJCEXgigapyBXMkGk"
+
+# ============================================
+# Google OAuth
+# ============================================
+NEXT_PUBLIC_GOOGLE_CLIENT_ID="957729811343-5cvnit1pe81odak2v0tn22jk2fsha4m3.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="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"
+
+# ============================================
+# NextAuth Configuration
+# ============================================
+NEXTAUTH_URL="http://localhost:3000"
+# Generate a random secret: openssl rand -base64 32
+NEXTAUTH_SECRET="your-random-secret-here-generate-with-openssl-rand-base64-32"
+
+# ============================================
+# Node Environment
+# ============================================
+NODE_ENV="development"
+```
+
+## Quick Setup
+
+1. **Create the file:**
+   ```bash
+   touch .env.local
+   ```
+
+2. **Copy the contents above** into `.env.local`
+
+3. **Generate NextAuth secret:**
+   ```bash
+   openssl rand -base64 32
+   ```
+   Replace `your-random-secret-here-generate-with-openssl-rand-base64-32` with the output
+
+4. **Get Stripe Webhook Secret:**
+   - Go to Stripe Dashboard > Webhooks
+   - Create a webhook endpoint: `http://localhost:3000/api/stripe/webhook` (for dev)
+   - Copy the signing secret to `STRIPE_WEBHOOK_SECRET`
+
+## Why "New Note" Fails
+
+The error is **backend-related**. Most likely causes:
+
+1. **Database tables don't exist** - Run the SQL migration
+2. **RLS policies not set** - Run the SQL migration
+3. **Environment variables missing** - Create `.env.local`
+4. **User not authenticated** - Check Supabase Auth
+
+**Fix:** Run the SQL migration in Supabase SQL Editor (see `SETUP_INSTRUCTIONS.md`)
+

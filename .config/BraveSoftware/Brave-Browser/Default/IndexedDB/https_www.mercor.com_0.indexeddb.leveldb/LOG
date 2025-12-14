@@ -1,0 +1,18 @@
+2025/11/16-17:21:57.270 ecb Creating DB /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.mercor.com_0.indexeddb.leveldb since it was missing.
+2025/11/16-17:21:57.272 ecb Reusing MANIFEST /home/siddharth/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.mercor.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/11/16-17:21:57.276 edb Level-0 table #5: started
+2025/11/16-17:21:57.277 edb Level-0 table #5: 1313 bytes OK
+2025/11/16-17:21:57.278 edb Delete type=0 #3
+2025/11/16-17:21:57.278 ecd Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/11/16-17:30:01.981 ecb Level-0 table #7: started
+2025/11/16-17:30:01.982 ecb Level-0 table #7: 1533 bytes OK
+2025/11/16-17:30:01.983 ecb Delete type=0 #4
+2025/11/16-17:30:01.983 ecb Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2025/11/16-17:30:01.983 ecb Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x008\x004\x003\x002\x006\x001\x009\x000\x000\x008\x007\x006\x00:\x00w\x00e\x00b\x00:\x00b\x005\x000\x008\x002\x006\x003\x00d\x004\x002\x005\x00e\x002\x00c\x005\x006\x003\x00a\x009\x00c\x00e\x009' @ 122 : 1
+2025/11/16-17:30:01.983 ecb Compacting 1@1 + 1@2 files
+2025/11/16-17:30:01.984 ecb Generated table #8@1: 34 keys, 1116 bytes
+2025/11/16-17:30:01.984 ecb Compacted 1@1 + 1@2 files => 1116 bytes
+2025/11/16-17:30:01.985 ecb compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/11/16-17:30:01.985 ecb Delete type=2 #7
+2025/11/16-17:30:01.985 ecb Delete type=2 #5
+2025/11/16-17:30:01.985 ecb Manual compaction at level-1 from '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x008\x004\x003\x002\x006\x001\x009\x000\x000\x008\x007\x006\x00:\x00w\x00e\x00b\x00:\x00b\x005\x000\x008\x002\x006\x003\x00d\x004\x002\x005\x00e\x002\x00c\x005\x006\x003\x00a\x009\x00c\x00e\x009' @ 122 : 1 .. (end); will stop at (end)

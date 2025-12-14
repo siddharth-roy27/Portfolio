@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Github, ExternalLink, Code2, Cpu, Layers, Zap } from 'lucide-react';
+import { Github, ExternalLink, Code2, Cpu, Layers, Zap, Globe } from 'lucide-react';
 import { useDomain } from '@/contexts/DomainContext';
 import { Button } from '@/components/ui/button';
 
@@ -16,6 +16,20 @@ interface Project {
 }
 
 const softwareProjects: Project[] = [
+  {
+    title: 'Portfolio Website',
+    subtitle: 'Modern Full-Stack Portfolio',
+    description: 'A stunning, responsive portfolio website built with React and Vite, featuring real-time competitive programming stats, animated UI, and seamless user experience.',
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'shadcn-ui'],
+    github: 'https://github.com/siddharth-roy27/Portfolio',
+    live: 'https://siddharth-roy-portfolio.com',
+    icon: <Globe className="w-6 h-6" />,
+    highlights: [
+      'Real-time coding stats integration',
+      'Animated particle background',
+      'Responsive design',
+    ],
+  },
   {
     title: 'Multi-threaded Reverse Proxy Server',
     description: 'High-performance reverse proxy handling 5,000+ concurrent connections with epoll-based I/O, custom thread pool, and asynchronous logging.',
