@@ -1,8 +1,9 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ExternalLink, Trophy, Star, Code2 } from 'lucide-react';
+import { ExternalLink, Trophy, Star, Code2, Loader2 } from 'lucide-react';
+import { useCodingStats } from '@/hooks/useCodingStats';
 
-interface PlatformStats {
+interface PlatformCardProps {
   name: string;
   username: string;
   href: string;
@@ -12,57 +13,168 @@ interface PlatformStats {
   stats: { label: string; value: string }[];
   badges?: string[];
   rank?: string;
+  isInView: boolean;
+  index: number;
 }
 
-const platforms: PlatformStats[] = [
-  {
-    name: 'LeetCode',
-    username: 'siddharthroy2708',
-    href: 'https://leetcode.com/u/siddharthroy2708/',
-    color: 'text-neon-amber',
-    bgColor: 'bg-neon-amber/10',
-    borderColor: 'border-neon-amber/30',
-    stats: [
-      { label: 'Problems Solved', value: '300+' },
-      { label: 'Contest Rating', value: '1650+' },
-      { label: 'Global Rank', value: 'Top 15%' },
-    ],
-    badges: ['100 Days', '50 Days', 'SQL'],
-    rank: 'Knight',
-  },
-  {
-    name: 'Codeforces',
-    username: 'siddharthroy2708',
-    href: 'https://codeforces.com/profile/siddharthroy2708',
-    color: 'text-primary',
-    bgColor: 'bg-primary/10',
-    borderColor: 'border-primary/30',
-    stats: [
-      { label: 'Max Rating', value: '1200+' },
-      { label: 'Problems Solved', value: '150+' },
-      { label: 'Contests', value: '25+' },
-    ],
-    rank: 'Pupil',
-  },
-  {
-    name: 'HackerRank',
-    username: 'siddharthroy2708',
-    href: 'https://www.hackerrank.com/profile/siddharthroy2708',
-    color: 'text-accent',
-    bgColor: 'bg-accent/10',
-    borderColor: 'border-accent/30',
-    stats: [
-      { label: 'Badges', value: '5⭐' },
-      { label: 'Certifications', value: '3+' },
-      { label: 'Skills Verified', value: '5+' },
-    ],
-    badges: ['Problem Solving', 'Python', 'C++'],
-  },
-];
+const PlatformCard = ({
+  name,
+  username,
+  href,
+  color,
+  bgColor,
+  borderColor,
+  stats,
+  badges,
+  rank,
+  isInView,
+  index,
+}: PlatformCardProps) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 30 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.5, delay: index * 0.15 }}
+    className={`glass-card p-6 md:p-8 group cursor-pointer border ${borderColor} hover:border-opacity-60 transition-all`}
+  >
+    {/* Header */}
+    <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center gap-3">
+        <div className={`p-2.5 rounded-lg ${bgColor}`}>
+          <Code2 className={`w-5 h-5 ${color}`} />
+        </div>
+        <div>
+          <h3 className={`font-space font-semibold text-lg ${color}`}>
+            {name}
+          </h3>
+          <p className="font-mono text-xs text-muted-foreground">
+            @{username}
+          </p>
+        </div>
+      </div>
+      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+    </div>
+
+    {/* Rank Badge */}
+    {rank && (
+      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${bgColor} border ${borderColor} mb-5`}>
+        <Trophy className={`w-3.5 h-3.5 ${color}`} />
+        <span className={`font-mono text-sm font-medium ${color}`}>
+          {rank}
+        </span>
+      </div>
+    )}
+
+    {/* Stats */}
+    <div className="space-y-4 mb-6">
+      {stats.map((stat) => (
+        <div key={stat.label} className="flex items-center justify-between">
+          <span className="text-sm text-muted-foreground">{stat.label}</span>
+          <span className={`font-mono font-semibold ${color}`}>
+            {stat.value}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* Badges */}
+    {badges && badges.length > 0 && (
+      <div className="pt-4 border-t border-white/5">
+        <div className="flex flex-wrap gap-2">
+          {badges.map((badge) => (
+            <span
+              key={badge}
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono ${bgColor} ${color}`}
+            >
+              <Star className="w-3 h-3" />
+              {badge}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+  </motion.a>
+);
 
 const CodingStatsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { leetcode, codeforces, loading } = useCodingStats();
+
+  // Helper to format rank from ranking number
+  const getLeetCodeRank = (ranking: number): string => {
+    if (ranking === 0) return 'Unranked';
+    const percentile = (ranking / 3000000) * 100;
+    if (percentile <= 5) return 'Guardian';
+    if (percentile <= 15) return 'Knight';
+    if (percentile <= 30) return 'Warrior';
+    return 'Coder';
+  };
+
+  const platforms = [
+    {
+      name: 'LeetCode',
+      username: 'siddharthroy2708',
+      href: 'https://leetcode.com/u/siddharthroy2708/',
+      color: 'text-neon-amber',
+      bgColor: 'bg-neon-amber/10',
+      borderColor: 'border-neon-amber/30',
+      stats: loading
+        ? [{ label: 'Loading...', value: '...' }]
+        : leetcode
+        ? [
+            { label: 'Problems Solved', value: String(leetcode.totalSolved) },
+            { label: 'Easy', value: String(leetcode.easySolved) },
+            { label: 'Medium', value: String(leetcode.mediumSolved) },
+            { label: 'Hard', value: String(leetcode.hardSolved) },
+          ]
+        : [
+            { label: 'Problems Solved', value: '300+' },
+            { label: 'Contest Rating', value: '1650+' },
+            { label: 'Global Rank', value: 'Top 15%' },
+          ],
+      badges: ['100 Days', '50 Days', 'SQL'],
+      rank: loading ? '...' : leetcode ? getLeetCodeRank(leetcode.ranking) : 'Knight',
+    },
+    {
+      name: 'Codeforces',
+      username: 'siddharthroy2708',
+      href: 'https://codeforces.com/profile/siddharthroy2708',
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+      borderColor: 'border-primary/30',
+      stats: loading
+        ? [{ label: 'Loading...', value: '...' }]
+        : codeforces
+        ? [
+            { label: 'Current Rating', value: String(codeforces.rating) },
+            { label: 'Max Rating', value: String(codeforces.maxRating) },
+            { label: 'Max Rank', value: codeforces.maxRank },
+          ]
+        : [
+            { label: 'Max Rating', value: '1200+' },
+            { label: 'Problems Solved', value: '150+' },
+            { label: 'Contests', value: '25+' },
+          ],
+      rank: loading ? '...' : codeforces?.rank || 'Pupil',
+    },
+    {
+      name: 'HackerRank',
+      username: 'siddharthroy2708',
+      href: 'https://www.hackerrank.com/profile/siddharthroy2708',
+      color: 'text-accent',
+      bgColor: 'bg-accent/10',
+      borderColor: 'border-accent/30',
+      stats: [
+        { label: 'Badges', value: '5⭐' },
+        { label: 'Certifications', value: '3+' },
+        { label: 'Skills Verified', value: '5+' },
+      ],
+      badges: ['Problem Solving', 'Python', 'C++'],
+    },
+  ];
 
   return (
     <section id="coding-stats" className="py-24 md:py-32 relative" ref={ref}>
@@ -80,81 +192,25 @@ const CodingStatsSection = () => {
           <p className="section-subtitle max-w-2xl mx-auto">
             Building problem-solving skills through algorithmic challenges
           </p>
+          {loading && (
+            <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
+              <Loader2 className="w-4 h-4 animate-spin" />
+              <span className="text-sm">Fetching live stats...</span>
+            </div>
+          )}
         </motion.div>
 
         {/* Stats Grid */}
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {platforms.map((platform, index) => (
-            <motion.a
+            <PlatformCard
               key={platform.name}
-              href={platform.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`glass-card p-6 md:p-8 group cursor-pointer border ${platform.borderColor} hover:border-opacity-60 transition-all`}
-            >
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className={`p-2.5 rounded-lg ${platform.bgColor}`}>
-                    <Code2 className={`w-5 h-5 ${platform.color}`} />
-                  </div>
-                  <div>
-                    <h3 className={`font-space font-semibold text-lg ${platform.color}`}>
-                      {platform.name}
-                    </h3>
-                    <p className="font-mono text-xs text-muted-foreground">
-                      @{platform.username}
-                    </p>
-                  </div>
-                </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-              </div>
-
-              {/* Rank Badge */}
-              {platform.rank && (
-                <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${platform.bgColor} border ${platform.borderColor} mb-5`}>
-                  <Trophy className={`w-3.5 h-3.5 ${platform.color}`} />
-                  <span className={`font-mono text-sm font-medium ${platform.color}`}>
-                    {platform.rank}
-                  </span>
-                </div>
-              )}
-
-              {/* Stats */}
-              <div className="space-y-4 mb-6">
-                {platform.stats.map((stat, statIndex) => (
-                  <div key={stat.label} className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">{stat.label}</span>
-                    <span className={`font-mono font-semibold ${platform.color}`}>
-                      {stat.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Badges */}
-              {platform.badges && (
-                <div className="pt-4 border-t border-white/5">
-                  <div className="flex flex-wrap gap-2">
-                    {platform.badges.map((badge) => (
-                      <span
-                        key={badge}
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono ${platform.bgColor} ${platform.color}`}
-                      >
-                        <Star className="w-3 h-3" />
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </motion.a>
+              {...platform}
+              isInView={isInView}
+              index={index}
+            />
           ))}
         </div>
-
       </div>
     </section>
   );
