@@ -14,7 +14,7 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: '1',
-    title: 'Problem Solving (Basic)',
+    title: 'Frontend Developer (React)',
     issuer: 'HackerRank',
     imageUrl: 'https://hrcdn.net/community-frontend/assets/brand/logo-new-white-green-a5cb16e0ae.svg',
     verifyUrl: 'https://www.hackerrank.com/certificates/iframe/dd277c38097f',
@@ -22,18 +22,10 @@ const certificates: Certificate[] = [
   },
   {
     id: '2',
-    title: 'C++ Programming',
+    title: 'Software Engineer Intern',
     issuer: 'HackerRank',
     imageUrl: 'https://hrcdn.net/community-frontend/assets/brand/logo-new-white-green-a5cb16e0ae.svg',
-    verifyUrl: 'https://www.hackerrank.com/certificates/iframe/dd277c38097f',
-    date: '2024'
-  },
-  {
-    id: '3',
-    title: 'Python (Basic)',
-    issuer: 'HackerRank',
-    imageUrl: 'https://hrcdn.net/community-frontend/assets/brand/logo-new-white-green-a5cb16e0ae.svg',
-    verifyUrl: 'https://www.hackerrank.com/certificates/iframe/dd277c38097f',
+    verifyUrl: 'https://www.hackerrank.com/certificates/iframe/fa1fb865f3f1',
     date: '2024'
   },
 ];
