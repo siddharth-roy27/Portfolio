@@ -17,6 +17,34 @@ interface Project {
 
 const softwareProjects: Project[] = [
   {
+    title: 'Chainlytics',
+    subtitle: 'AI-Powered Supply Chain Decision Engine',
+    description: 'Designed and implemented a production-grade supply chain optimization engine combining demand forecasting, simulation, and reinforcement learning to drive inventory, routing, and prioritization decisions across 10+ operational scenarios, improving simulated cost efficiency by 20–30% compared to heuristic baselines.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'Reinforcement Learning', 'Time-Series Forecasting', 'Simulation Modeling', 'Graph Algorithms', 'ML Pipelines'],
+    github: 'https://github.com/siddharth-roy27/Chainlytics',
+    icon: <Code2 className="w-6 h-6" />,
+    highlights: [
+      'Multi-agent reinforcement learning policies',
+      'Graph-based state encoding over supply chain networks',
+      '100+ deterministic simulation runs per policy',
+      'Full decision traceability and explainability',
+    ],
+  },
+  {
+    title: 'Supply Chain RL Decision Engine',
+    subtitle: 'Real-Time Simulation Dashboard',
+    description: 'Built an end-to-end multi-agent supply chain simulator supporting 100+ orders per episode with configurable demand, routing, and inventory constraints. Designed a Gym-compatible RL environment with policies outperforming greedy baseline by +23.7% reward and +108% more orders delivered.',
+    tech: ['Python', 'Gymnasium', 'NumPy', 'Pandas', 'SimPy', 'NetworkX', 'FastAPI', 'WebSockets', 'React/Next.js', 'Plotly', 'TensorBoard'],
+    github: 'https://github.com/siddharth-roy27/supply-chain-rl.git',
+    icon: <Zap className="w-6 h-6" />,
+    highlights: [
+      '+23.7% higher reward vs greedy baseline',
+      '+108% more orders delivered (25 vs 12)',
+      'Real-time interactive dashboard with RL control',
+      'Live metrics & 2D map visualization',
+    ],
+  },
+  {
     title: 'Portfolio Website',
     subtitle: 'Modern Full-Stack Portfolio',
     description: 'A stunning, responsive portfolio website built with React and Vite, featuring real-time competitive programming stats, animated UI, and seamless user experience.',
