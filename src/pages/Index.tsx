@@ -6,6 +6,9 @@ import AboutSection from '@/components/sections/AboutSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import SkillsSection from '@/components/sections/SkillsSection';
+import TechStackSection from '@/components/sections/TechStackSection';
+import CurrentlyExploringSection from '@/components/sections/CurrentlyExploringSection';
+import GitHubStatsSection from '@/components/sections/GitHubStatsSection';
 import CodingStatsSection from '@/components/sections/CodingStatsSection';
 import CertificatesSection from '@/components/sections/CertificatesSection';
 import HobbiesSection from '@/components/sections/HobbiesSection';
@@ -31,6 +34,9 @@ const Index = () => {
           <ProjectsSection />
           <ExperienceSection />
           <SkillsSection />
+          <TechStackSection />
+          <CurrentlyExploringSection />
+          <GitHubStatsSection />
           <CodingStatsSection />
           <CertificatesSection />
           <HobbiesSection />

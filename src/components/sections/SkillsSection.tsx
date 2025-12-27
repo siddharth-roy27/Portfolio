@@ -1,13 +1,15 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { useDomain } from '@/contexts/DomainContext';
+import { useGitHubStats } from '@/hooks/useGitHubStats';
 
 interface SkillCategory {
   title: string;
-  skills: { name: string; level: number }[];
+  skills: { name: string; level: number; highlight?: boolean }[];
 }
 
-const softwareSkills: SkillCategory[] = [
+// Enhanced skills data with GitHub correlation
+const baseSoftwareSkills: SkillCategory[] = [
   {
     title: 'Languages',
     skills: [
@@ -27,6 +29,7 @@ const softwareSkills: SkillCategory[] = [
       { name: 'Node.js', level: 80 },
       { name: 'TensorFlow', level: 75 },
       { name: 'PyTorch', level: 70 },
+      { name: 'FastAPI', level: 85 },
     ],
   },
   {
@@ -37,6 +40,7 @@ const softwareSkills: SkillCategory[] = [
       { name: 'Deep Learning', level: 70 },
       { name: 'Distributed Systems', level: 75 },
       { name: 'Operating Systems', level: 80 },
+      { name: 'Reinforcement Learning', level: 85 },
     ],
   },
   {
@@ -47,6 +51,7 @@ const softwareSkills: SkillCategory[] = [
       { name: 'Linux', level: 85 },
       { name: 'GCP', level: 70 },
       { name: 'PostgreSQL', level: 80 },
+      { name: 'Supabase', level: 80 },
     ],
   },
 ];
@@ -94,13 +99,33 @@ const eceSkills: SkillCategory[] = [
   },
 ];
 
-
 const SkillsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const { domain } = useDomain();
+  const { stats: githubStats } = useGitHubStats();
 
-  const skills = domain === 'software' ? softwareSkills : eceSkills;
+  // Enhance skills with GitHub data
+  const skills = useMemo(() => {
+    if (domain === 'ece') return eceSkills;
+
+    // For software domain, enhance with GitHub activity
+    return baseSoftwareSkills.map(category => ({
+      ...category,
+      skills: category.skills.map(skill => {
+        // Check if this skill correlates with GitHub languages
+        const isHighlighted = githubStats?.languages?.some(lang =>
+          lang.name.toLowerCase().includes(skill.name.toLowerCase()) ||
+          skill.name.toLowerCase().includes(lang.name.toLowerCase())
+        ) || false;
+
+        return {
+          ...skill,
+          highlight: isHighlighted,
+        };
+      }),
+    }));
+  }, [domain, githubStats]);
 
   return (
     <section id="skills" className="py-24 md:py-32 relative" ref={ref}>
