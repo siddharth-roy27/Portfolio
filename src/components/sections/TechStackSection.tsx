@@ -32,7 +32,7 @@ const techStackData: TechItem[] = [
   { name: 'Python', icon: <Code2 className="w-5 h-5" />, category: 'Languages', color: '#3776ab' },
   { name: 'C', icon: <Code2 className="w-5 h-5" />, category: 'Languages', color: '#a8b9cc' },
   { name: 'C++', icon: <Code2 className="w-5 h-5" />, category: 'Languages', color: '#00599c' },
-  { name: 'Java', icon: <Code2 className="w-5 h-5" />, category: 'Languages', color: '#007396' },
+
   { name: 'Bash / Shell', icon: <Server className="w-5 h-5" />, category: 'Languages', color: '#89e051' },
 
   // Libraries & Frameworks
